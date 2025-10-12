@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "calendarclick"
+version = "0.1.0"
+description = ""
+authors = ["yonosemanana <yonosemanana.ap@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+selenium = "^4.36.0"
+schedule = "^1.2.2"
+pytz = "^2025.2"
+dotenv = "^0.9.9"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

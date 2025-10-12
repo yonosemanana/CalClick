@@ -1,0 +1,131 @@
+2025-10-12 12:31:45,294 - INFO - Starting Work Portal Automation System
+2025-10-12 12:31:45,295 - INFO - Weekly schedule generated: {0: 'office', 3: 'office', 2: 'office', 1: 'home', 4: 'home'}
+2025-10-12 12:31:45,295 - INFO - Today's schedule - Morning: 07:50, Evening: 16:14
+2025-10-12 12:31:45,295 - INFO - Scheduler initialized. Running...
+2025-10-12 12:31:59,328 - INFO - Shutting down...
+2025-10-12 12:34:00,844 - INFO - Starting Work Portal Automation System
+2025-10-12 12:34:00,844 - INFO - Weekly schedule generated: {2: 'office', 3: 'office', 4: 'office', 1: 'home', 0: 'home'}
+2025-10-12 12:34:00,844 - INFO - Today's schedule - Morning: 07:41, Evening: 16:21
+2025-10-12 12:34:00,845 - INFO - Scheduler initialized. Running...
+2025-10-12 12:36:15,980 - INFO - Shutting down...
+2025-10-12 12:36:18,263 - INFO - Starting Work Portal Automation System
+2025-10-12 12:36:18,263 - INFO - Weekly schedule generated: {3: 'office', 1: 'office', 2: 'office', 4: 'home', 0: 'home'}
+2025-10-12 12:36:18,263 - INFO - Today's schedule - Morning: 08:01, Evening: 15:57
+2025-10-12 12:36:18,264 - INFO - Scheduler initialized. Running...
+2025-10-12 12:40:27,623 - INFO - Shutting down...
+2025-10-12 12:40:30,263 - INFO - Starting Work Portal Automation System
+2025-10-12 12:40:30,263 - INFO - Weekly schedule generated: {3: 'office', 2: 'office', 0: 'office', 4: 'home', 1: 'home'}
+2025-10-12 12:40:30,263 - INFO - Today's schedule - Morning: 08:23, Evening: 16:27
+2025-10-12 12:40:30,264 - INFO - Weekend - skipping morning routine
+2025-10-12 12:40:30,264 - INFO - Scheduler initialized. Running...
+2025-10-12 12:41:06,848 - INFO - Shutting down...
+2025-10-12 12:41:09,635 - INFO - Starting Work Portal Automation System
+2025-10-12 12:41:09,635 - INFO - Weekly schedule generated: {3: 'office', 2: 'office', 0: 'office', 1: 'home', 4: 'home'}
+2025-10-12 12:41:09,635 - INFO - Today's schedule - Morning: 08:02, Evening: 16:10
+2025-10-12 12:41:09,635 - INFO - Starting morning routine
+2025-10-12 12:41:22,374 - ERROR - Login failed - timeout
+2025-10-12 12:41:27,469 - INFO - Scheduler initialized. Running...
+2025-10-12 12:44:18,373 - INFO - Shutting down...
+2025-10-12 12:44:18,378 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x73b415149550>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/d1e326a7e3e51f6e32e67b9a7b233e92
+2025-10-12 12:44:18,380 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x73b4151497c0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/d1e326a7e3e51f6e32e67b9a7b233e92
+2025-10-12 12:44:18,381 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x73b415149970>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/d1e326a7e3e51f6e32e67b9a7b233e92
+2025-10-12 12:44:25,893 - INFO - Starting Work Portal Automation System
+2025-10-12 12:44:25,894 - INFO - Weekly schedule generated: {1: 'office', 2: 'office', 3: 'office', 0: 'home', 4: 'home'}
+2025-10-12 12:44:25,894 - INFO - Today's schedule - Morning: 08:08, Evening: 16:25
+2025-10-12 12:44:25,894 - INFO - Starting morning routine
+2025-10-12 12:44:37,942 - ERROR - Login failed - timeout
+2025-10-12 12:44:43,036 - INFO - Scheduler initialized. Running...
+2025-10-12 13:02:24,054 - INFO - Shutting down...
+2025-10-12 13:02:24,057 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7a4414ebd1f0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/31ac4f6e63fe1817f294967371dd65fe
+2025-10-12 13:02:24,060 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7a4414ebd520>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/31ac4f6e63fe1817f294967371dd65fe
+2025-10-12 13:02:24,063 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7a4414ebd6d0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/31ac4f6e63fe1817f294967371dd65fe
+2025-10-12 13:02:29,536 - INFO - Starting Work Portal Automation System
+2025-10-12 13:02:29,536 - INFO - Weekly schedule generated: {4: 'office', 2: 'office', 1: 'office', 3: 'home', 0: 'home'}
+2025-10-12 13:02:29,536 - INFO - Today's schedule - Morning: 08:22, Evening: 15:41
+2025-10-12 13:02:29,537 - INFO - Starting morning routine
+2025-10-12 13:02:31,492 - ERROR - Login error: 'NoneType' object is not iterable
+2025-10-12 13:02:36,607 - INFO - Scheduler initialized. Running...
+2025-10-12 13:05:34,569 - INFO - Shutting down...
+2025-10-12 13:05:34,576 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7e4936f497c0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/3b4a55fd417be17fd850780973dd7071
+2025-10-12 13:05:34,579 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7e4936f499a0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/3b4a55fd417be17fd850780973dd7071
+2025-10-12 13:05:34,582 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7e4936f49b20>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/3b4a55fd417be17fd850780973dd7071
+2025-10-12 13:05:39,419 - INFO - Starting Work Portal Automation System
+2025-10-12 13:05:39,419 - INFO - Weekly schedule generated: {3: 'office', 1: 'office', 4: 'office', 2: 'home', 0: 'home'}
+2025-10-12 13:05:39,419 - INFO - Today's schedule - Morning: 08:02, Evening: 16:26
+2025-10-12 13:05:39,419 - INFO - Starting morning routine
+2025-10-12 13:05:41,228 - ERROR - Login error: 'NoneType' object is not iterable
+2025-10-12 13:05:47,387 - INFO - Scheduler initialized. Running...
+2025-10-12 13:09:33,762 - INFO - Shutting down...
+2025-10-12 13:09:33,766 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x72ef76a4d250>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/b36d7eed66c21b4fbc6a55fbe21ad7c6
+2025-10-12 13:09:33,768 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x72ef76a4d520>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/b36d7eed66c21b4fbc6a55fbe21ad7c6
+2025-10-12 13:09:33,770 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x72ef76a4d6d0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/b36d7eed66c21b4fbc6a55fbe21ad7c6
+2025-10-12 13:09:37,850 - INFO - Starting Work Portal Automation System
+2025-10-12 13:09:37,850 - INFO - Weekly schedule generated: {1: 'office', 3: 'office', 2: 'office', 4: 'home', 0: 'home'}
+2025-10-12 13:09:37,851 - INFO - Today's schedule - Morning: 08:06, Evening: 16:01
+2025-10-12 13:09:37,852 - INFO - Starting morning routine
+2025-10-12 13:09:39,631 - ERROR - Login error: 'NoneType' object is not iterable
+2025-10-12 13:09:44,746 - INFO - Scheduler initialized. Running...
+2025-10-12 13:11:40,108 - INFO - Shutting down...
+2025-10-12 13:11:40,109 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7b127824d490>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/ccbf6f64d8847d0575cb6f20bd46aa64
+2025-10-12 13:11:40,110 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7b127824d4f0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/ccbf6f64d8847d0575cb6f20bd46aa64
+2025-10-12 13:11:40,110 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7b127824d700>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/ccbf6f64d8847d0575cb6f20bd46aa64
+2025-10-12 13:11:44,075 - INFO - Starting Work Portal Automation System
+2025-10-12 13:11:44,075 - INFO - Weekly schedule generated: {4: 'office', 0: 'office', 3: 'office', 2: 'home', 1: 'home'}
+2025-10-12 13:11:44,076 - INFO - Today's schedule - Morning: 07:51, Evening: 15:38
+2025-10-12 13:11:44,076 - INFO - Starting morning routine
+2025-10-12 13:11:45,850 - ERROR - Login error: 'NoneType' object is not iterable
+2025-10-12 13:11:50,973 - INFO - Scheduler initialized. Running...
+2025-10-12 13:13:48,053 - INFO - Shutting down...
+2025-10-12 13:13:48,058 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x73b230409130>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/520fac645d48e02b21c95ebbf39c3671
+2025-10-12 13:13:48,060 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x73b2304093a0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/520fac645d48e02b21c95ebbf39c3671
+2025-10-12 13:13:48,062 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x73b2304098b0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/520fac645d48e02b21c95ebbf39c3671
+2025-10-12 13:13:51,575 - INFO - Starting Work Portal Automation System
+2025-10-12 13:13:51,575 - INFO - Weekly schedule generated: {0: 'office', 4: 'office', 2: 'office', 1: 'home', 3: 'home'}
+2025-10-12 13:13:51,576 - INFO - Today's schedule - Morning: 08:09, Evening: 16:07
+2025-10-12 13:13:51,576 - INFO - Starting morning routine
+2025-10-12 13:13:53,469 - ERROR - Login error: 'NoneType' object is not iterable
+2025-10-12 13:13:58,601 - INFO - Scheduler initialized. Running...
+2025-10-12 13:33:45,818 - INFO - Starting Work Portal Automation System
+2025-10-12 13:33:45,818 - INFO - Weekly schedule generated: {0: 'office', 4: 'office', 1: 'office', 2: 'home', 3: 'home'}
+2025-10-12 13:33:45,818 - INFO - Today's schedule - Morning: 08:16, Evening: 16:26
+2025-10-12 13:33:45,819 - INFO - Starting morning routine
+2025-10-12 13:33:49,434 - INFO - ✅ Login attempt complete.
+2025-10-12 13:33:49,445 - INFO - Current URL: https://panel.rcponline.pl/app/
+2025-10-12 13:33:49,445 - INFO - Login successful
+2025-10-12 13:33:49,445 - ERROR - Morning routine error: 6
+2025-10-12 13:33:49,563 - INFO - Scheduler initialized. Running...
+2025-10-12 13:35:13,835 - INFO - Shutting down...
+2025-10-12 13:35:13,836 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7cfae1d7d250>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/a3a472d1e6db0d6c368865bc19847de6
+2025-10-12 13:35:13,837 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7cfae1d7d100>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/a3a472d1e6db0d6c368865bc19847de6
+2025-10-12 13:35:13,837 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7cfae1d7d3d0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/a3a472d1e6db0d6c368865bc19847de6
+2025-10-12 13:35:14,143 - INFO - Starting Work Portal Automation System
+2025-10-12 13:35:14,143 - INFO - Weekly schedule generated: {0: 'office', 3: 'office', 1: 'office', 4: 'home', 2: 'home'}
+2025-10-12 13:35:14,143 - INFO - Today's schedule - Morning: 07:50, Evening: 15:51
+2025-10-12 13:35:14,143 - INFO - Starting morning routine
+2025-10-12 13:35:28,725 - ERROR - Login failed - timeout
+2025-10-12 13:35:33,846 - INFO - Scheduler initialized. Running...
+2025-10-12 13:35:55,395 - INFO - Shutting down...
+2025-10-12 13:35:55,396 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x77dd146508c0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/5f03b361d2f78eec0ae19e13b3558332
+2025-10-12 13:35:55,397 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x77dd14650b60>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/5f03b361d2f78eec0ae19e13b3558332
+2025-10-12 13:35:55,397 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x77dd14650fe0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/5f03b361d2f78eec0ae19e13b3558332
+2025-10-12 13:55:31,208 - INFO - Starting Work Portal Automation System
+2025-10-12 13:55:31,208 - INFO - Weekly schedule generated: {2: 'office', 0: 'office', 3: 'office', 4: 'home', 1: 'home'}
+2025-10-12 13:55:31,208 - INFO - Today's schedule - Morning: 07:56, Evening: 15:56
+2025-10-12 13:55:31,209 - INFO - Starting morning routine
+2025-10-12 13:55:31,209 - INFO - ====== WebDriver manager ======
+2025-10-12 13:55:31,273 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-12 13:55:31,417 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-12 13:55:31,547 - INFO - There is no [linux64] chromedriver "141.0.7390.76" for browser google-chrome "141.0.7390" in cache
+2025-10-12 13:55:31,547 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-12 13:55:31,918 - INFO - WebDriver version 141.0.7390.76 selected
+2025-10-12 13:55:31,923 - INFO - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/141.0.7390.76/linux64/chromedriver-linux64.zip
+2025-10-12 13:55:31,923 - INFO - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/141.0.7390.76/linux64/chromedriver-linux64.zip
+2025-10-12 13:55:32,030 - INFO - Driver downloading response is 200
+2025-10-12 13:55:32,357 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-12 13:55:32,595 - INFO - Driver has been saved in cache [/home/alper/.wdm/drivers/chromedriver/linux64/141.0.7390.76]
+2025-10-12 13:55:47,186 - ERROR - Login failed - timeout
+2025-10-12 13:55:52,298 - INFO - Scheduler initialized. Running...
+2025-10-12 14:08:27,355 - INFO - Shutting down...
+2025-10-12 14:08:27,359 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x76e55ef0f110>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/43ecf439aa77416d7bdd7d779774cda8
+2025-10-12 14:08:27,361 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x76e55ef0efc0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/43ecf439aa77416d7bdd7d779774cda8
+2025-10-12 14:08:27,363 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x76e55ef0ec90>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/43ecf439aa77416d7bdd7d779774cda8
