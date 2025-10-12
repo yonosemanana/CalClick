@@ -49,7 +49,7 @@ class WorkPortalAutomation:
         Generate random weekly schedule: 3 days office, 2 days home
         Returns dict with day numbers (0=Monday) and location
         """
-        days = [0, 1, 2, 3, 4]  # Monday to Friday
+        days = [0, 1, 2, 3, 4, 5, 6]  # Monday to Friday
         random.shuffle(days)
 
         schedule = {}
@@ -73,10 +73,20 @@ class WorkPortalAutomation:
         options.add_argument('--disable-blink-features=AutomationControlled')
         options.add_experimental_option("excludeSwitches", ["enable-automation"])
         options.add_experimental_option('useAutomationExtension', False)
+        options.add_argument("start-maximized")
+        options.add_argument("--disable-gpu")
+        options.add_argument("--disable-extensions")
+        options.add_argument('--disable-notifications')
+        options.add_argument('--disable-popup-blocking')
+        options.add_argument('--no-first-run')
 
         service = Service(ChromeDriverManager().install())
         self.driver = webdriver.Chrome(service=service, options=options)
         self.driver.maximize_window()
+
+        # Set default timeouts
+        self.driver.set_page_load_timeout(30)
+        self.driver.implicitly_wait(10)
 
     def login(self):
         """Login to the portal"""
@@ -84,34 +94,46 @@ class WorkPortalAutomation:
             self.driver.get(self.portal_url)
             wait = WebDriverWait(self.driver, 10)
 
-            # Wait for the username field to appear
-            wait.until(EC.presence_of_element_located((By.NAME, "_username")))
+            # Wait for login form and ensure we're on login page
+            login_form = wait.until(
+                EC.presence_of_element_located((By.CLASS_NAME, "kt-login_form"))
+            )
 
-            # Locate elements precisely by 'name' or 'id'
+            # Find username and password fields directly
             username_input = self.driver.find_element(By.NAME, "_username")
             password_input = self.driver.find_element(By.NAME, "_password")
-            login_button = self.driver.find_element(By.ID, "kt_login_signin_submit")
-            logging.debug(username_input)
 
-            # Fill in the form
+            # Clear and enter username
             username_input.clear()
             username_input.send_keys(self.username)
+            logging.info("Username entered")
+
+            # Clear and enter password
             password_input.clear()
             password_input.send_keys(self.password)
+            logging.info("Password entered")
 
-            # Submit the form
+            # Find and click login button
+            login_button = self.driver.find_element(By.ID, "kt_login_signin_submit")
             login_button.click()
+            logging.info("Login button clicked")
 
-            # Wait for redirect or confirmation (adjust timeout as needed)
-            wait.until(EC.url_changes(self.driver.current_url))
+            # Wait for redirect
+            wait.until(lambda driver: driver.current_url != self.portal_url)
+            current_url = self.driver.current_url
+            logging.info(f"Current URL after login: {current_url}")
 
-            logging.info(f"Current URL: {self.driver.current_url}")
-            logging.info("Login successful")
-            return True
+            if "login" not in current_url.lower():
+                logging.info("Login successful - redirected to dashboard")
+                return True
+            else:
+                logging.error("Still on login page after attempt")
+                return False
 
         except TimeoutException:
-            logging.error("Login failed - timeout")
+            logging.error("Timeout waiting for redirect after login")
             return False
+
         except Exception as e:
             logging.error(f"Login error: {str(e)}")
             return False
@@ -121,26 +143,17 @@ class WorkPortalAutomation:
         try:
             wait = WebDriverWait(self.driver, 10)
 
-            # Updated selectors for start work based on the HTML
-            selectors = [
-                (By.XPATH, "//option[@value='1'][@data-content='<i class=\"fa fa-play text-success me-3\"></i>work_start']"),
-                (By.XPATH, "//button[contains(@data-content, 'work_start')]"),
-                (By.XPATH, "//button[contains(@class, 'text-success') and contains(., 'Start')]"),
-                (By.XPATH, "//*[contains(@class, 'fa-play')]")
-            ]
-
-            for by, selector in selectors:
-                try:
-                    start_button = wait.until(
-                        EC.element_to_be_clickable((by, selector))
-                    )
-                    start_button.click()
-                    logging.info(f"Clicked start work button using selector: {selector}")
-                    return True
-                except (TimeoutException, NoSuchElementException):
-                    continue
-
-            raise Exception("Start work button not found")
+            # Use the exact selector from the source code
+            try:
+                start_button = wait.until(
+                    EC.element_to_be_clickable((By.XPATH, '//*[@id="kt_aside_mobile_close"][@data-id="1"][@class="btn pb-4 pt-4 start-work-button"]'))
+                )
+                start_button.click()
+                logging.info("Clicked start work button using exact XPath")
+                return True
+            except (TimeoutException, NoSuchElementException) as e:
+                logging.error(f"Could not find start work button: {str(e)}")
+                return False
 
         except Exception as e:
             logging.error(f"Error clicking start work: {str(e)}")
@@ -151,12 +164,12 @@ class WorkPortalAutomation:
         try:
             wait = WebDriverWait(self.driver, 10)
 
-            # Updated selectors for stop work based on the HTML
+            # Updated selectors based on the actual page elements
             selectors = [
-                (By.XPATH, "//option[@value='6'][@data-content='<i class=\"fa fa-stop text-danger me-3\"></i>work_finish']"),
-                (By.XPATH, "//button[contains(@data-content, 'work_finish')]"),
-                (By.XPATH, "//button[contains(@class, 'text-danger') and contains(., 'Stop')]"),
-                (By.XPATH, "//*[contains(@class, 'fa-stop')]")
+                (By.XPATH, "//button[@id='kt_aside_mobile_close'][@data-id='6']"),
+                (By.CSS_SELECTOR, "button.end-work-button"),
+                (By.XPATH, "//button[contains(@class, 'end-work-button')]"),
+                (By.XPATH, "//button[.//i[contains(@class, 'fa-stop text-danger')]]")
             ]
 
             for by, selector in selectors:
@@ -164,13 +177,18 @@ class WorkPortalAutomation:
                     stop_button = wait.until(
                         EC.element_to_be_clickable((by, selector))
                     )
-                    stop_button.click()
-                    logging.info(f"Clicked stop work button using selector: {selector}")
-                    return True
+                    # Check if button is not disabled
+                    if 'disabled' not in stop_button.get_attribute('class'):
+                        stop_button.click()
+                        logging.info(f"Clicked stop work button using selector: {selector}")
+                        return True
+                    else:
+                        logging.warning("Stop button is disabled, cannot click")
+                        continue
                 except (TimeoutException, NoSuchElementException):
                     continue
 
-            raise Exception("Stop work button not found")
+            raise Exception("Stop work button not found or is disabled")
 
         except Exception as e:
             logging.error(f"Error clicking stop work: {str(e)}")
@@ -179,72 +197,109 @@ class WorkPortalAutomation:
     def select_location(self, location):
         """
         Select work location (office or home)
-
         Args:
             location (str): "office" or "home"
         """
         try:
             wait = WebDriverWait(self.driver, 10)
 
-            # Updated selectors for location based on the HTML
-            location_map = {
-                "office": [
-                    (By.XPATH, "//button[contains(@class, 'office-btn')]"),
-                    (By.XPATH, "//input[@value='office']"),
-                    (By.XPATH, "//button[contains(text(), 'Office')]")
-                ],
-                "home": [
-                    (By.XPATH, "//option[@value='22'][@data-content='<i class=\"fas fa-home text-dark-green\"></i>Home office registered']"),
-                    (By.XPATH, "//option[@value='23'][@data-content='<i class=\"fas fa-home text-dark-green\"></i>Home office unregistered']"),
-                    (By.XPATH, "//button[contains(@class, 'home-btn')]"),
-                    (By.XPATH, "//input[@value='home']"),
-                    (By.XPATH, "//button[contains(text(), 'Home')]")
-                ]
-            }
+            # Find the dropdown using the exact XPath
+            try:
+                remote_select = wait.until(
+                    EC.presence_of_element_located((By.XPATH, '//*[@id="remote_holder"]/span/span[1]/span'))
+                )
+                logging.info("Found dropdown using exact XPath")
+            except (TimeoutException, NoSuchElementException):
+                logging.error("Could not find location dropdown with exact XPath")
+                return False
 
-            selectors = location_map.get(location.lower(), [])
-            for by, selector in selectors:
-                try:
-                    location_button = wait.until(
-                        EC.element_to_be_clickable((by, selector))
-                    )
-                    location_button.click()
-                    logging.info(f"Selected location: {location} using selector: {selector}")
-                    return True
-                except (TimeoutException, NoSuchElementException):
-                    continue
+            # Try to click the dropdown
+            try:
+                self.driver.execute_script("arguments[0].scrollIntoView(true);", remote_select)
+                time.sleep(1)
+                remote_select.click()
+                logging.info("Clicked dropdown successfully")
+            except Exception as e:
+                logging.error(f"Failed to click dropdown: {str(e)}")
+                return False
 
-            raise Exception(f"No matching {location} button found")
+            time.sleep(2)  # Wait for dropdown options to appear
+
+            # Select the appropriate option
+            if location.lower() == "office":
+                option_text = "In the office"
+                data_id = "0"
+                icon_class = "fa-car-building"
+            else:
+                option_text = "Home office"
+                data_id = "1"
+                icon_class = "fa-laptop-house"
+
+            # Try to find the option using multiple approaches based on the exact HTML structure
+            by, selector =  (By.XPATH, f"//div[@data-id='{data_id}'][contains(text(), '{option_text}')]")
+
+            try:
+                option = wait.until(
+                    EC.element_to_be_clickable((by, selector))
+                )
+                option.click()
+                logging.info(f"Selected location '{option_text}' using selector: {selector}")
+                return True
+            except (TimeoutException, NoSuchElementException) as e:
+                logging.debug(f"Failed with selector {selector}: {str(e)}")
+
+            logging.error(f"Could not select location {option_text} with any selector")
+            return False
 
         except Exception as e:
-            logging.error(f"Error selecting location: {str(e)}")
+            logging.error(f"Error in select_location: {str(e)}")
+            if self.driver:
+                logging.error(f"Current URL: {self.driver.current_url}")
             return False
 
     def morning_routine(self):
         """Execute morning login routine"""
         today = datetime.now().weekday()
 
-        # # Check if it's a business day (Monday=0 to Friday=4)
-        # if today > 4:
-        #     logging.info("Weekend - skipping morning routine")
-        #     return
-
         logging.info("Starting morning routine")
 
         try:
             self.setup_driver()
+            logging.info("Driver setup complete")
 
-            if self.login():
-                location = self.weekly_schedule[today]
-                if self.select_location(location):
-                    time.sleep(2)  # Brief pause
-                    self.click_start_work()
+            if not self.login():
+                raise Exception("Login failed")
+            logging.info("Login successful, waiting for page load")
+
+            time.sleep(3)  # Wait for page to fully load after login
+
+            location = self.weekly_schedule[today]
+            logging.info(f"Attempting to select location: {location}")
+
+            if not self.select_location(location):
+                raise Exception("Failed to select location")
+            logging.info("Location selection successful")
+
+            time.sleep(2)  # Brief pause before clicking start
+
+            if not self.click_start_work():
+                raise Exception("Failed to click start work button")
+            logging.info("Start work button clicked successfully")
 
             # Keep browser open for a bit, then close
             time.sleep(5)
 
         except Exception as e:
             logging.error(f"Morning routine error: {str(e)}")
+            # Log the current URL to help with debugging
+            if self.driver:
+                logging.error(f"Current URL when error occurred: {self.driver.current_url}")
+                # Take screenshot on error
+                try:
+                    self.driver.save_screenshot("error_screenshot.png")
+                    logging.info("Error screenshot saved as error_screenshot.png")
+                except Exception as ss_err:
+                    logging.error(f"Failed to save screenshot: {str(ss_err)}")
         finally:
             if self.driver:
                 self.driver.quit()
