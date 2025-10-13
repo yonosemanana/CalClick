@@ -49,7 +49,7 @@ class WorkPortalAutomation:
         Generate random weekly schedule: 3 days office, 2 days home
         Returns dict with day numbers (0=Monday) and location
         """
-        days = [0, 1, 2, 3, 4, 5, 6]  # Monday to Friday
+        days = [0, 1, 2, 3, 4]  # Monday to Friday
         random.shuffle(days)
 
         schedule = {}
@@ -143,16 +143,22 @@ class WorkPortalAutomation:
         try:
             wait = WebDriverWait(self.driver, 10)
 
-            # Use the exact selector from the source code
+            # First make sure the page is fully loaded after location selection
+            time.sleep(2)
+
+            # Try different selectors for the start button
+            by, selector = (By.XPATH, "//button[@data-id='1' and contains(@class, 'start-work-button')]")
+
             try:
-                start_button = wait.until(
-                    EC.element_to_be_clickable((By.XPATH, '//*[@id="kt_aside_mobile_close"][@data-id="1"][@class="btn pb-4 pt-4 start-work-button"]'))
-                )
+                # Try to find the button
+                start_button = wait.until(EC.presence_of_element_located((by, selector)))
                 start_button.click()
-                logging.info("Clicked start work button using exact XPath")
+                logging.info(f"Successfully clicked start button using selector: {selector}")
                 return True
-            except (TimeoutException, NoSuchElementException) as e:
-                logging.error(f"Could not find start work button: {str(e)}")
+
+            except (TimeoutException, NoSuchElementException):
+                # If we get here, no button was found
+                logging.error("Could not find or click start button with any selector")
                 return False
 
         except Exception as e:
@@ -164,31 +170,23 @@ class WorkPortalAutomation:
         try:
             wait = WebDriverWait(self.driver, 10)
 
-            # Updated selectors based on the actual page elements
-            selectors = [
-                (By.XPATH, "//button[@id='kt_aside_mobile_close'][@data-id='6']"),
-                (By.CSS_SELECTOR, "button.end-work-button"),
-                (By.XPATH, "//button[contains(@class, 'end-work-button')]"),
-                (By.XPATH, "//button[.//i[contains(@class, 'fa-stop text-danger')]]")
-            ]
+            # First make sure the page is fully loaded after location selection
+            time.sleep(2)
 
-            for by, selector in selectors:
-                try:
-                    stop_button = wait.until(
-                        EC.element_to_be_clickable((by, selector))
-                    )
-                    # Check if button is not disabled
-                    if 'disabled' not in stop_button.get_attribute('class'):
-                        stop_button.click()
-                        logging.info(f"Clicked stop work button using selector: {selector}")
-                        return True
-                    else:
-                        logging.warning("Stop button is disabled, cannot click")
-                        continue
-                except (TimeoutException, NoSuchElementException):
-                    continue
+            # Try different selectors for the start button
+            by, selector = (By.XPATH, "//button[@data-id='6' and contains(@class, 'end-work-button')]")
 
-            raise Exception("Stop work button not found or is disabled")
+            try:
+                # Try to find the button
+                stop_button = wait.until(EC.presence_of_element_located((by, selector)))
+                stop_button.click()
+                logging.info(f"Successfully clicked stop button using selector: {selector}")
+                return True
+
+            except (TimeoutException, NoSuchElementException):
+                # If we get here, no button was found
+                logging.error("Could not find or click stop button with any selector")
+                return False
 
         except Exception as e:
             logging.error(f"Error clicking stop work: {str(e)}")
@@ -209,57 +207,46 @@ class WorkPortalAutomation:
                     EC.presence_of_element_located((By.XPATH, '//*[@id="remote_holder"]/span/span[1]/span'))
                 )
                 logging.info("Found dropdown using exact XPath")
-            except (TimeoutException, NoSuchElementException):
-                logging.error("Could not find location dropdown with exact XPath")
-                return False
-
-            # Try to click the dropdown
-            try:
-                self.driver.execute_script("arguments[0].scrollIntoView(true);", remote_select)
-                time.sleep(1)
                 remote_select.click()
                 logging.info("Clicked dropdown successfully")
-            except Exception as e:
-                logging.error(f"Failed to click dropdown: {str(e)}")
-                return False
 
-            time.sleep(2)  # Wait for dropdown options to appear
+            except (TimeoutException, NoSuchElementException):
+                logging.error("Could not find location dropdown or click it")
+                return False
 
             # Select the appropriate option
             if location.lower() == "office":
                 option_text = "In the office"
                 data_id = "0"
-                icon_class = "fa-car-building"
             else:
                 option_text = "Home office"
                 data_id = "1"
-                icon_class = "fa-laptop-house"
 
-            # Try to find the option using multiple approaches based on the exact HTML structure
-            by, selector =  (By.XPATH, f"//div[@data-id='{data_id}'][contains(text(), '{option_text}')]")
+            # Try to find the option using multiple approaches
+            by, selector = (By.XPATH, f"//div[@data-id='{data_id}'][contains(text(), '{option_text}')]")
 
             try:
-                option = wait.until(
-                    EC.element_to_be_clickable((by, selector))
-                )
+                option = wait.until(EC.element_to_be_clickable((by, selector)))
                 option.click()
                 logging.info(f"Selected location '{option_text}' using selector: {selector}")
                 return True
-            except (TimeoutException, NoSuchElementException) as e:
-                logging.debug(f"Failed with selector {selector}: {str(e)}")
 
-            logging.error(f"Could not select location {option_text} with any selector")
-            return False
+            except (TimeoutException, NoSuchElementException) as e:
+                logging.error(f"Failed with selector {selector}: {str(e)}")
+                return False
 
         except Exception as e:
             logging.error(f"Error in select_location: {str(e)}")
-            if self.driver:
-                logging.error(f"Current URL: {self.driver.current_url}")
             return False
 
     def morning_routine(self):
         """Execute morning login routine"""
         today = datetime.now().weekday()
+
+        # Check if it's a business day
+        if today > 4:
+            logging.info("Weekend - skipping morning routine")
+            return
 
         logging.info("Starting morning routine")
 
@@ -317,18 +304,36 @@ class WorkPortalAutomation:
 
         try:
             self.setup_driver()
+            logging.info("Driver setup complete")
 
-            if self.login():
-                time.sleep(2)
-                self.click_stop_work()
+            if not self.login():
+                raise Exception("Login failed")
+            logging.info("Login successful, waiting for page load")
 
+            time.sleep(3)  # Wait for page to fully load after login
+
+            if not self.click_stop_work():
+                raise Exception("Failed to click stop work button")
+            logging.info("Stop work button clicked successfully")
+
+            # Keep browser open for a bit, then close
             time.sleep(5)
 
         except Exception as e:
             logging.error(f"Evening routine error: {str(e)}")
+            # Log the current URL to help with debugging
+            if self.driver:
+                logging.error(f"Current URL when error occurred: {self.driver.current_url}")
+                # Take screenshot on error
+                try:
+                    self.driver.save_screenshot("error_screenshot.png")
+                    logging.info("Error screenshot saved as error_screenshot.png")
+                except Exception as ss_err:
+                    logging.error(f"Failed to save screenshot: {str(ss_err)}")
         finally:
             if self.driver:
                 self.driver.quit()
+
 
     def cleanup(self):
         """Cleanup resources"""
@@ -338,7 +343,7 @@ class WorkPortalAutomation:
 
 def calculate_random_time(base_hour, base_minute, variance_minutes=30):
     """
-    Calculate a random time around the base time
+    Calculate a random time around the base time with random seconds
 
     Args:
         base_hour (int): Base hour (24-hour format)
@@ -351,10 +356,13 @@ def calculate_random_time(base_hour, base_minute, variance_minutes=30):
     # Random offset between -variance and +variance
     offset = random.randint(-variance_minutes, variance_minutes)
 
-    base_time = datetime.now().replace(hour=base_hour, minute=base_minute, second=0)
+    # Generate random seconds
+    random_seconds = random.randint(0, 59)
+
+    base_time = datetime.now().replace(hour=base_hour, minute=base_minute, second=random_seconds)
     random_time = base_time + timedelta(minutes=offset)
 
-    return random_time.strftime("%H:%M")
+    return random_time.strftime("%H:%M:%S")
 
 
 def schedule_tasks(automation):
@@ -368,22 +376,27 @@ def schedule_tasks(automation):
 
     logging.info(f"Today's schedule - Morning: {morning_time}, Evening: {evening_time}")
 
-    # Schedule tasks
-    schedule.every().monday.at(morning_time).do(automation.morning_routine)
-    schedule.every().tuesday.at(morning_time).do(automation.morning_routine)
-    schedule.every().wednesday.at(morning_time).do(automation.morning_routine)
-    schedule.every().thursday.at(morning_time).do(automation.morning_routine)
-    schedule.every().friday.at(morning_time).do(automation.morning_routine)
+    # Schedule tasks (using only HH:MM part for schedule library compatibility)
+    morning_schedule_time = morning_time[:5]  # Get only HH:MM part
+    evening_schedule_time = evening_time[:5]  # Get only HH:MM part
 
-    schedule.every().monday.at(evening_time).do(automation.evening_routine)
-    schedule.every().tuesday.at(evening_time).do(automation.evening_routine)
-    schedule.every().wednesday.at(evening_time).do(automation.evening_routine)
-    schedule.every().thursday.at(evening_time).do(automation.evening_routine)
-    schedule.every().friday.at(evening_time).do(automation.evening_routine)
+    # Schedule morning tasks
+    schedule.every().monday.at(morning_schedule_time).do(automation.morning_routine)
+    schedule.every().tuesday.at(morning_schedule_time).do(automation.morning_routine)
+    schedule.every().wednesday.at(morning_schedule_time).do(automation.morning_routine)
+    schedule.every().thursday.at(morning_schedule_time).do(automation.morning_routine)
+    schedule.every().friday.at(morning_schedule_time).do(automation.morning_routine)
 
-    ### Tests
-    automation.morning_routine()
+    # Schedule evening tasks
+    schedule.every().monday.at(evening_schedule_time).do(automation.evening_routine)
+    schedule.every().tuesday.at(evening_schedule_time).do(automation.evening_routine)
+    schedule.every().wednesday.at(evening_schedule_time).do(automation.evening_routine)
+    schedule.every().thursday.at(evening_schedule_time).do(automation.evening_routine)
+    schedule.every().friday.at(evening_schedule_time).do(automation.evening_routine)
 
+    # ### Tests
+    # automation.morning_routine()
+    # automation.evening_routine()
 
     # Regenerate weekly schedule every Monday at midnight
     schedule.every().monday.at("00:01").do(lambda: automation.generate_weekly_schedule())

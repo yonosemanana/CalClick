@@ -794,3 +794,542 @@ Stacktrace:
 2025-10-12 15:56:04,605 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f83d66dc170>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4c42a65b9e39266d7b444c01551d4f65
 2025-10-12 15:56:04,605 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f83d66dc200>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4c42a65b9e39266d7b444c01551d4f65
 2025-10-12 15:56:04,606 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f83d66dc380>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/4c42a65b9e39266d7b444c01551d4f65
+2025-10-12 22:24:57,688 - INFO - Starting Work Portal Automation System
+2025-10-12 22:24:57,688 - INFO - Weekly schedule generated: {2: 'office', 1: 'office', 0: 'office', 5: 'home', 4: 'home', 3: 'home', 6: 'home'}
+2025-10-12 22:24:57,688 - INFO - Today's schedule - Morning: 08:05, Evening: 16:14
+2025-10-12 22:24:57,688 - INFO - Starting morning routine
+2025-10-12 22:24:57,688 - INFO - ====== WebDriver manager ======
+2025-10-12 22:24:57,755 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-12 22:24:57,897 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-12 22:24:58,078 - INFO - Driver [/home/alper/.wdm/drivers/chromedriver/linux64/141.0.7390.76/chromedriver-linux64/chromedriver] found in cache
+2025-10-12 22:24:58,828 - INFO - Driver setup complete
+2025-10-12 22:24:59,887 - INFO - Username entered
+2025-10-12 22:24:59,960 - INFO - Password entered
+2025-10-12 22:25:00,034 - INFO - Login button clicked
+2025-10-12 22:25:02,399 - INFO - Current URL after login: https://panel.rcponline.pl/app/
+2025-10-12 22:25:02,399 - INFO - Login successful - redirected to dashboard
+2025-10-12 22:25:02,400 - INFO - Login successful, waiting for page load
+2025-10-12 22:25:05,400 - INFO - Attempting to select location: home
+2025-10-12 22:25:05,456 - INFO - Found dropdown using exact XPath
+2025-10-12 22:25:06,601 - INFO - Clicked dropdown successfully
+2025-10-12 22:25:08,810 - INFO - Selected location 'Home office' using selector: //div[@data-id='1'][contains(text(), 'Home office')]
+2025-10-12 22:25:08,810 - INFO - Location selection successful
+2025-10-12 22:25:10,811 - ERROR - Error clicking start work: element_to_be_clickable() takes 1 positional argument but 2 were given
+2025-10-12 22:25:10,811 - ERROR - Morning routine error: Failed to click start work button
+2025-10-12 22:25:10,828 - ERROR - Current URL when error occurred: https://panel.rcponline.pl/app/
+2025-10-12 22:25:10,954 - INFO - Error screenshot saved as error_screenshot.png
+2025-10-12 22:25:11,071 - INFO - Scheduler initialized. Running...
+2025-10-12 22:26:36,845 - INFO - Shutting down...
+2025-10-12 22:26:36,846 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7af5cf3d5e20>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/86cd0989ddbc0c0b363cc527acf4209d
+2025-10-12 22:26:36,847 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7af5cf3d7b00>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/86cd0989ddbc0c0b363cc527acf4209d
+2025-10-12 22:26:36,847 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7af5cf1e40e0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/86cd0989ddbc0c0b363cc527acf4209d
+2025-10-12 22:26:38,497 - INFO - Starting Work Portal Automation System
+2025-10-12 22:26:38,498 - INFO - Weekly schedule generated: {4: 'office', 5: 'office', 3: 'office', 0: 'home', 2: 'home', 1: 'home', 6: 'home'}
+2025-10-12 22:26:38,498 - INFO - Today's schedule - Morning: 07:57, Evening: 16:14
+2025-10-12 22:26:38,498 - INFO - Starting morning routine
+2025-10-12 22:26:38,498 - INFO - ====== WebDriver manager ======
+2025-10-12 22:26:38,561 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-12 22:26:38,679 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-12 22:26:38,830 - INFO - Driver [/home/alper/.wdm/drivers/chromedriver/linux64/141.0.7390.76/chromedriver-linux64/chromedriver] found in cache
+2025-10-12 22:26:39,373 - INFO - Driver setup complete
+2025-10-12 22:26:43,279 - INFO - Username entered
+2025-10-12 22:26:43,379 - INFO - Password entered
+2025-10-12 22:26:43,884 - INFO - Login button clicked
+2025-10-12 22:26:45,776 - INFO - Current URL after login: https://panel.rcponline.pl/app/
+2025-10-12 22:26:45,777 - INFO - Login successful - redirected to dashboard
+2025-10-12 22:26:45,777 - INFO - Login successful, waiting for page load
+2025-10-12 22:26:48,777 - INFO - Attempting to select location: home
+2025-10-12 22:26:48,827 - INFO - Found dropdown using exact XPath
+2025-10-12 22:26:49,901 - INFO - Clicked dropdown successfully
+2025-10-12 22:26:52,137 - INFO - Selected location 'Home office' using selector: //div[@data-id='1'][contains(text(), 'Home office')]
+2025-10-12 22:26:52,137 - INFO - Location selection successful
+2025-10-12 22:27:04,605 - ERROR - Could not find start work button: Message: 
+
+2025-10-12 22:27:04,605 - ERROR - Morning routine error: Failed to click start work button
+2025-10-12 22:27:04,610 - ERROR - Current URL when error occurred: https://panel.rcponline.pl/app/
+2025-10-12 22:27:04,790 - INFO - Error screenshot saved as error_screenshot.png
+2025-10-12 22:27:04,895 - INFO - Scheduler initialized. Running...
+2025-10-12 22:27:57,161 - INFO - Shutting down...
+2025-10-12 22:27:57,162 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7e055b7a3c50>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/39f71559721d404a6d4ea4994198573a
+2025-10-12 22:27:57,162 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7e055b7a3ad0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/39f71559721d404a6d4ea4994198573a
+2025-10-12 22:27:57,163 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7e055b7a3950>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/39f71559721d404a6d4ea4994198573a
+2025-10-13 09:42:06,229 - INFO - Today's schedule - Morning: 08:26, Evening: 15:56
+2025-10-13 09:42:06,240 - INFO - Starting morning routine
+2025-10-13 09:42:06,240 - INFO - ====== WebDriver manager ======
+2025-10-13 09:42:06,777 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-13 09:42:06,789 - ERROR - Morning routine error: Could not reach host. Are you offline?
+2025-10-13 09:42:06,805 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ad4e05a1be0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/eb42811024de59cb684c89db3111e0e8/url
+2025-10-13 09:42:06,814 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ad4e05a1d60>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/eb42811024de59cb684c89db3111e0e8/url
+2025-10-13 09:42:06,823 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ad4e05a1f10>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/eb42811024de59cb684c89db3111e0e8/url
+2025-10-13 09:42:06,842 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ad4e05a2300>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/eb42811024de59cb684c89db3111e0e8
+2025-10-13 09:42:06,845 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ad4e05a2510>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/eb42811024de59cb684c89db3111e0e8
+2025-10-13 09:42:06,848 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ad4e05a26c0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/eb42811024de59cb684c89db3111e0e8
+2025-10-13 20:12:34,033 - INFO - Starting Work Portal Automation System
+2025-10-13 20:12:34,033 - INFO - Weekly schedule generated: {2: 'office', 0: 'office', 4: 'office', 3: 'home', 1: 'home', 5: 'home', 6: 'home'}
+2025-10-13 20:12:34,033 - INFO - Today's schedule - Morning: 08:25, Evening: 16:04
+2025-10-13 20:12:34,034 - INFO - Starting morning routine
+2025-10-13 20:12:34,034 - INFO - ====== WebDriver manager ======
+2025-10-13 20:12:34,101 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-13 20:12:34,287 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-13 20:12:34,430 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-13 20:12:34,783 - INFO - WebDriver version 141.0.7390.76 selected
+2025-10-13 20:12:34,788 - INFO - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/141.0.7390.76/linux64/chromedriver-linux64.zip
+2025-10-13 20:12:34,788 - INFO - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/141.0.7390.76/linux64/chromedriver-linux64.zip
+2025-10-13 20:12:34,915 - INFO - Driver downloading response is 200
+2025-10-13 20:12:35,241 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-13 20:12:35,539 - INFO - Driver has been saved in cache [/home/alper/.wdm/drivers/chromedriver/linux64/141.0.7390.76]
+2025-10-13 20:12:36,073 - INFO - Driver setup complete
+2025-10-13 20:12:37,268 - INFO - Username entered
+2025-10-13 20:12:37,464 - INFO - Password entered
+2025-10-13 20:12:37,552 - INFO - Login button clicked
+2025-10-13 20:12:39,837 - INFO - Current URL after login: https://panel.rcponline.pl/app/
+2025-10-13 20:12:39,837 - INFO - Login successful - redirected to dashboard
+2025-10-13 20:12:39,837 - INFO - Login successful, waiting for page load
+2025-10-13 20:12:42,837 - INFO - Attempting to select location: office
+2025-10-13 20:12:42,897 - INFO - Found dropdown using exact XPath
+2025-10-13 20:12:44,064 - INFO - Clicked dropdown successfully
+2025-10-13 20:12:46,283 - INFO - Selected location 'In the office' using selector: //div[@data-id='0'][contains(text(), 'In the office')]
+2025-10-13 20:12:46,283 - INFO - Location selection successful
+2025-10-13 20:12:48,349 - ERROR - Error clicking start work: Message: invalid selector: Unable to locate an element with the xpath expression //button[@type="button" and contains(@class, "start-work-button") and @data-id="1] because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//button[@type="button" and contains(@class, "start-work-button") and @data-id="1]' is not a valid XPath expression.
+  (Session info: chrome=141.0.7390.54); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidselectorexception
+Stacktrace:
+#0 0x57f60526b4ca <unknown>
+#1 0x57f604cea566 <unknown>
+#2 0x57f604cf1208 <unknown>
+#3 0x57f604cf39a8 <unknown>
+#4 0x57f604cf3a33 <unknown>
+#5 0x57f604d3c16f <unknown>
+#6 0x57f604d3c921 <unknown>
+#7 0x57f604d8ae94 <unknown>
+#8 0x57f604d6265d <unknown>
+#9 0x57f604d88328 <unknown>
+#10 0x57f604d62403 <unknown>
+#11 0x57f604d2eb02 <unknown>
+#12 0x57f604d2f7c1 <unknown>
+#13 0x57f60522f298 <unknown>
+#14 0x57f6052330ff <unknown>
+#15 0x57f605216729 <unknown>
+#16 0x57f605233ca5 <unknown>
+#17 0x57f6051fbf8f <unknown>
+#18 0x57f605258308 <unknown>
+#19 0x57f6052584e3 <unknown>
+#20 0x57f60526a463 <unknown>
+#21 0x79817b09caa4 <unknown>
+#22 0x79817b129c6c <unknown>
+
+2025-10-13 20:12:48,350 - ERROR - Morning routine error: Failed to click start work button
+2025-10-13 20:12:48,354 - ERROR - Current URL when error occurred: https://panel.rcponline.pl/app/
+2025-10-13 20:12:48,445 - INFO - Error screenshot saved as error_screenshot.png
+2025-10-13 20:12:48,558 - INFO - Scheduler initialized. Running...
+2025-10-13 20:13:56,947 - INFO - Shutting down...
+2025-10-13 20:13:56,948 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7e71da30f080>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/acce1a45d522fe03f0da94d868730e8a
+2025-10-13 20:13:56,949 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7e71da30edb0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/acce1a45d522fe03f0da94d868730e8a
+2025-10-13 20:13:56,949 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7e71da30ec30>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/acce1a45d522fe03f0da94d868730e8a
+2025-10-13 20:13:58,696 - INFO - Starting Work Portal Automation System
+2025-10-13 20:13:58,696 - INFO - Weekly schedule generated: {6: 'office', 4: 'office', 0: 'office', 2: 'home', 3: 'home', 5: 'home', 1: 'home'}
+2025-10-13 20:13:58,696 - INFO - Today's schedule - Morning: 07:44, Evening: 15:59
+2025-10-13 20:13:58,697 - INFO - Starting morning routine
+2025-10-13 20:13:58,697 - INFO - ====== WebDriver manager ======
+2025-10-13 20:13:58,759 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-13 20:13:58,882 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-13 20:13:59,021 - INFO - Driver [/home/alper/.wdm/drivers/chromedriver/linux64/141.0.7390.76/chromedriver-linux64/chromedriver] found in cache
+2025-10-13 20:13:59,883 - INFO - Driver setup complete
+2025-10-13 20:14:01,302 - INFO - Username entered
+2025-10-13 20:14:01,470 - INFO - Password entered
+2025-10-13 20:14:01,961 - INFO - Login button clicked
+2025-10-13 20:14:03,563 - INFO - Current URL after login: https://panel.rcponline.pl/app/
+2025-10-13 20:14:03,563 - INFO - Login successful - redirected to dashboard
+2025-10-13 20:14:03,563 - INFO - Login successful, waiting for page load
+2025-10-13 20:14:06,563 - INFO - Attempting to select location: office
+2025-10-13 20:14:06,626 - INFO - Found dropdown using exact XPath
+2025-10-13 20:14:07,712 - INFO - Clicked dropdown successfully
+2025-10-13 20:14:09,838 - INFO - Selected location 'In the office' using selector: //div[@data-id='0'][contains(text(), 'In the office')]
+2025-10-13 20:14:09,838 - INFO - Location selection successful
+2025-10-13 20:14:22,240 - ERROR - Could not find start work button: Message: 
+
+2025-10-13 20:14:22,240 - ERROR - Morning routine error: Failed to click start work button
+2025-10-13 20:14:22,259 - ERROR - Current URL when error occurred: https://panel.rcponline.pl/app/
+2025-10-13 20:14:22,563 - INFO - Error screenshot saved as error_screenshot.png
+2025-10-13 20:14:23,885 - INFO - Scheduler initialized. Running...
+2025-10-13 20:14:35,766 - INFO - Shutting down...
+2025-10-13 20:14:35,767 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x71d63a7500b0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/e02a11173e751dfe971b8834fd7e898d
+2025-10-13 20:14:35,768 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x71d63a750110>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/e02a11173e751dfe971b8834fd7e898d
+2025-10-13 20:14:35,768 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x71d63a750320>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/e02a11173e751dfe971b8834fd7e898d
+2025-10-13 20:16:26,006 - INFO - Starting Work Portal Automation System
+2025-10-13 20:16:26,006 - INFO - Weekly schedule generated: {3: 'office', 4: 'office', 0: 'office', 5: 'home', 6: 'home', 2: 'home', 1: 'home'}
+2025-10-13 20:16:26,006 - INFO - Today's schedule - Morning: 07:55, Evening: 15:32
+2025-10-13 20:16:26,006 - INFO - Starting morning routine
+2025-10-13 20:16:26,007 - INFO - ====== WebDriver manager ======
+2025-10-13 20:16:26,068 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-13 20:16:26,186 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-13 20:16:26,349 - INFO - Driver [/home/alper/.wdm/drivers/chromedriver/linux64/141.0.7390.76/chromedriver-linux64/chromedriver] found in cache
+2025-10-13 20:16:27,105 - INFO - Driver setup complete
+2025-10-13 20:16:28,663 - INFO - Username entered
+2025-10-13 20:16:28,738 - INFO - Password entered
+2025-10-13 20:16:28,815 - INFO - Login button clicked
+2025-10-13 20:16:31,462 - INFO - Current URL after login: https://panel.rcponline.pl/app/
+2025-10-13 20:16:31,462 - INFO - Login successful - redirected to dashboard
+2025-10-13 20:16:31,462 - INFO - Login successful, waiting for page load
+2025-10-13 20:16:34,463 - INFO - Attempting to select location: office
+2025-10-13 20:16:34,520 - INFO - Found dropdown using exact XPath
+2025-10-13 20:16:35,662 - INFO - Clicked dropdown successfully
+2025-10-13 20:16:37,905 - INFO - Selected location 'In the office' using selector: //div[@data-id='0'][contains(text(), 'In the office')]
+2025-10-13 20:16:37,905 - INFO - Location selection successful
+2025-10-13 20:16:50,315 - ERROR - Could not find start work button: Message: 
+
+2025-10-13 20:16:50,315 - ERROR - Morning routine error: Failed to click start work button
+2025-10-13 20:16:50,324 - ERROR - Current URL when error occurred: https://panel.rcponline.pl/app/
+2025-10-13 20:16:50,528 - INFO - Error screenshot saved as error_screenshot.png
+2025-10-13 20:16:51,655 - INFO - Scheduler initialized. Running...
+2025-10-13 20:25:50,304 - INFO - Shutting down...
+2025-10-13 20:25:50,305 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x767d686c0110>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/d66ebd18b7ff0385cf6937a9fe93a701
+2025-10-13 20:25:50,306 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x767d686c0320>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/d66ebd18b7ff0385cf6937a9fe93a701
+2025-10-13 20:25:50,307 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x767d686c04a0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/d66ebd18b7ff0385cf6937a9fe93a701
+2025-10-13 20:25:50,705 - INFO - Starting Work Portal Automation System
+2025-10-13 20:25:50,705 - INFO - Weekly schedule generated: {4: 'office', 3: 'office', 1: 'office', 2: 'home', 5: 'home', 6: 'home', 0: 'home'}
+2025-10-13 20:25:50,705 - INFO - Today's schedule - Morning: 07:55, Evening: 16:01
+2025-10-13 20:25:50,706 - INFO - Starting morning routine
+2025-10-13 20:25:50,706 - INFO - ====== WebDriver manager ======
+2025-10-13 20:25:50,770 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-13 20:25:50,911 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-13 20:25:51,094 - INFO - Driver [/home/alper/.wdm/drivers/chromedriver/linux64/141.0.7390.76/chromedriver-linux64/chromedriver] found in cache
+2025-10-13 20:25:51,860 - INFO - Driver setup complete
+2025-10-13 20:25:52,928 - INFO - Username entered
+2025-10-13 20:25:53,010 - INFO - Password entered
+2025-10-13 20:25:53,527 - INFO - Login button clicked
+2025-10-13 20:25:55,935 - INFO - Current URL after login: https://panel.rcponline.pl/app/
+2025-10-13 20:25:55,935 - INFO - Login successful - redirected to dashboard
+2025-10-13 20:25:55,935 - INFO - Login successful, waiting for page load
+2025-10-13 20:25:58,936 - INFO - Attempting to select location: home
+2025-10-13 20:25:58,949 - INFO - Found dropdown using exact XPath
+2025-10-13 20:26:00,107 - INFO - Clicked dropdown successfully
+2025-10-13 20:26:02,240 - INFO - Selected location 'Home office' using selector: //div[@data-id='1'][contains(text(), 'Home office')]
+2025-10-13 20:26:02,240 - INFO - Location selection successful
+2025-10-13 20:26:14,587 - ERROR - Could not find start work button: Message: 
+
+2025-10-13 20:26:14,587 - ERROR - Morning routine error: Failed to click start work button
+2025-10-13 20:26:14,598 - ERROR - Current URL when error occurred: https://panel.rcponline.pl/app/
+2025-10-13 20:26:14,801 - INFO - Error screenshot saved as error_screenshot.png
+2025-10-13 20:26:14,932 - INFO - Scheduler initialized. Running...
+2025-10-13 20:27:47,946 - INFO - Shutting down...
+2025-10-13 20:27:47,947 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x76e84923df40>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/92a783e7858f53517328f824e9c23f5f
+2025-10-13 20:27:47,948 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x76e84904fb60>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/92a783e7858f53517328f824e9c23f5f
+2025-10-13 20:27:47,949 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x76e84904f9e0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/92a783e7858f53517328f824e9c23f5f
+2025-10-13 20:28:25,459 - INFO - Starting Work Portal Automation System
+2025-10-13 20:28:25,459 - INFO - Weekly schedule generated: {2: 'office', 6: 'office', 0: 'office', 1: 'home', 5: 'home', 4: 'home', 3: 'home'}
+2025-10-13 20:28:25,460 - INFO - Today's schedule - Morning: 08:11, Evening: 15:42
+2025-10-13 20:28:25,460 - INFO - Starting morning routine
+2025-10-13 20:28:25,460 - INFO - ====== WebDriver manager ======
+2025-10-13 20:28:25,521 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-13 20:28:25,640 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-13 20:28:25,799 - INFO - Driver [/home/alper/.wdm/drivers/chromedriver/linux64/141.0.7390.76/chromedriver-linux64/chromedriver] found in cache
+2025-10-13 20:28:26,565 - INFO - Driver setup complete
+2025-10-13 20:28:27,781 - INFO - Username entered
+2025-10-13 20:28:27,858 - INFO - Password entered
+2025-10-13 20:28:27,927 - INFO - Login button clicked
+2025-10-13 20:28:30,375 - INFO - Current URL after login: https://panel.rcponline.pl/app/
+2025-10-13 20:28:30,375 - INFO - Login successful - redirected to dashboard
+2025-10-13 20:28:30,375 - INFO - Login successful, waiting for page load
+2025-10-13 20:28:33,375 - INFO - Attempting to select location: office
+2025-10-13 20:28:33,435 - INFO - Found dropdown using exact XPath
+2025-10-13 20:28:34,558 - INFO - Clicked dropdown successfully
+2025-10-13 20:28:36,815 - INFO - Selected location 'In the office' using selector: //div[@data-id='0'][contains(text(), 'In the office')]
+2025-10-13 20:28:36,815 - INFO - Location selection successful
+2025-10-13 20:28:49,309 - ERROR - Could not find start work button: Message: 
+
+2025-10-13 20:28:49,309 - ERROR - Morning routine error: Failed to click start work button
+2025-10-13 20:28:49,316 - ERROR - Current URL when error occurred: https://panel.rcponline.pl/app/
+2025-10-13 20:28:49,419 - INFO - Error screenshot saved as error_screenshot.png
+2025-10-13 20:28:50,567 - INFO - Scheduler initialized. Running...
+2025-10-13 20:32:54,615 - INFO - Shutting down...
+2025-10-13 20:32:54,616 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7adfb0ed80e0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/037ae2c8853c4f93668fa6e6760e43d2
+2025-10-13 20:32:54,616 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7adfb0ed8230>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/037ae2c8853c4f93668fa6e6760e43d2
+2025-10-13 20:32:54,616 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7adfb0ed83b0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/037ae2c8853c4f93668fa6e6760e43d2
+2025-10-13 20:32:55,002 - INFO - Starting Work Portal Automation System
+2025-10-13 20:32:55,002 - INFO - Weekly schedule generated: {3: 'office', 5: 'office', 6: 'office', 2: 'home', 0: 'home', 1: 'home', 4: 'home'}
+2025-10-13 20:32:55,002 - INFO - Today's schedule - Morning: 07:35, Evening: 15:38
+2025-10-13 20:32:55,002 - INFO - Starting morning routine
+2025-10-13 20:32:55,002 - INFO - ====== WebDriver manager ======
+2025-10-13 20:32:55,070 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-13 20:32:55,196 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-13 20:32:55,405 - INFO - Driver [/home/alper/.wdm/drivers/chromedriver/linux64/141.0.7390.76/chromedriver-linux64/chromedriver] found in cache
+2025-10-13 20:32:56,674 - INFO - Driver setup complete
+2025-10-13 20:32:57,665 - INFO - Username entered
+2025-10-13 20:32:57,828 - INFO - Password entered
+2025-10-13 20:32:57,911 - INFO - Login button clicked
+2025-10-13 20:33:00,181 - INFO - Current URL after login: https://panel.rcponline.pl/app/
+2025-10-13 20:33:00,181 - INFO - Login successful - redirected to dashboard
+2025-10-13 20:33:00,181 - INFO - Login successful, waiting for page load
+2025-10-13 20:33:03,182 - INFO - Attempting to select location: home
+2025-10-13 20:33:03,242 - INFO - Found dropdown using exact XPath
+2025-10-13 20:33:04,362 - INFO - Clicked dropdown successfully
+2025-10-13 20:33:06,467 - INFO - Selected location 'Home office' using selector: //div[@data-id='1'][contains(text(), 'Home office')]
+2025-10-13 20:33:06,467 - INFO - Location selection successful
+2025-10-13 20:33:19,841 - ERROR - Could not find start work button: Message: 
+
+2025-10-13 20:33:19,842 - ERROR - Morning routine error: Failed to click start work button
+2025-10-13 20:33:19,858 - ERROR - Current URL when error occurred: https://panel.rcponline.pl/app/
+2025-10-13 20:33:20,038 - INFO - Error screenshot saved as error_screenshot.png
+2025-10-13 20:33:20,140 - INFO - Scheduler initialized. Running...
+2025-10-13 20:34:31,521 - INFO - Shutting down...
+2025-10-13 20:34:31,522 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x77aa07b34050>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/c7041b56cc8a6bacaa52ad641859c2dc
+2025-10-13 20:34:31,523 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x77aa07b34470>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/c7041b56cc8a6bacaa52ad641859c2dc
+2025-10-13 20:34:31,523 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x77aa07b345f0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/c7041b56cc8a6bacaa52ad641859c2dc
+2025-10-13 20:49:59,880 - INFO - Starting Work Portal Automation System
+2025-10-13 20:49:59,880 - INFO - Weekly schedule generated: {6: 'office', 4: 'office', 5: 'office', 3: 'home', 1: 'home', 2: 'home', 0: 'home'}
+2025-10-13 20:49:59,880 - INFO - Today's schedule - Morning: 07:47, Evening: 15:56
+2025-10-13 20:49:59,881 - INFO - Starting morning routine
+2025-10-13 20:49:59,881 - INFO - ====== WebDriver manager ======
+2025-10-13 20:49:59,985 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-13 20:50:00,161 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-13 20:50:00,313 - INFO - Driver [/home/alper/.wdm/drivers/chromedriver/linux64/141.0.7390.76/chromedriver-linux64/chromedriver] found in cache
+2025-10-13 20:50:01,763 - INFO - Driver setup complete
+2025-10-13 20:50:04,160 - INFO - Username entered
+2025-10-13 20:50:04,307 - INFO - Password entered
+2025-10-13 20:50:04,865 - INFO - Login button clicked
+2025-10-13 20:50:08,105 - INFO - Current URL after login: https://panel.rcponline.pl/app/
+2025-10-13 20:50:08,105 - INFO - Login successful - redirected to dashboard
+2025-10-13 20:50:08,106 - INFO - Login successful, waiting for page load
+2025-10-13 20:50:11,107 - INFO - Attempting to select location: home
+2025-10-13 20:50:11,142 - INFO - Found dropdown using exact XPath
+2025-10-13 20:50:12,399 - INFO - Clicked dropdown successfully
+2025-10-13 20:50:14,484 - INFO - Selected location 'Home office' using selector: //div[@data-id='1'][contains(text(), 'Home office')]
+2025-10-13 20:50:31,083 - INFO - Location selection successful
+2025-10-13 20:50:47,471 - INFO - Successfully clicked start button using selector: //button[@data-id='1' and contains(@class, 'start-work-button')]
+2025-10-13 20:50:47,471 - INFO - Start work button clicked successfully
+2025-10-13 20:50:52,658 - INFO - Scheduler initialized. Running...
+2025-10-13 20:51:23,675 - INFO - Shutting down...
+2025-10-13 20:51:23,676 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7eb2f22dcd10>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/d93de6b6fcbfd0db11bfab4d3b5b367a
+2025-10-13 20:51:23,676 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7eb2f22dce60>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/d93de6b6fcbfd0db11bfab4d3b5b367a
+2025-10-13 20:51:23,677 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7eb2f22dcfe0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/d93de6b6fcbfd0db11bfab4d3b5b367a
+2025-10-13 20:54:59,708 - INFO - Starting Work Portal Automation System
+2025-10-13 20:54:59,708 - INFO - Weekly schedule generated: {0: 'office', 4: 'office', 6: 'office', 1: 'home', 2: 'home', 5: 'home', 3: 'home'}
+2025-10-13 20:54:59,708 - INFO - Today's schedule - Morning: 07:37, Evening: 16:11
+2025-10-13 20:54:59,708 - INFO - Starting morning routine
+2025-10-13 20:54:59,709 - INFO - ====== WebDriver manager ======
+2025-10-13 20:54:59,770 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-13 20:54:59,894 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-13 20:55:00,113 - INFO - Driver [/home/alper/.wdm/drivers/chromedriver/linux64/141.0.7390.76/chromedriver-linux64/chromedriver] found in cache
+2025-10-13 20:55:00,760 - INFO - Driver setup complete
+2025-10-13 20:55:02,106 - INFO - Username entered
+2025-10-13 20:55:02,219 - INFO - Password entered
+2025-10-13 20:55:04,298 - INFO - Login button clicked
+2025-10-13 20:55:04,365 - INFO - Current URL after login: https://panel.rcponline.pl/app/
+2025-10-13 20:55:04,365 - INFO - Login successful - redirected to dashboard
+2025-10-13 20:55:04,365 - INFO - Login successful, waiting for page load
+2025-10-13 20:55:07,365 - INFO - Attempting to select location: office
+2025-10-13 20:55:07,426 - INFO - Found dropdown using exact XPath
+2025-10-13 20:55:08,572 - INFO - Clicked dropdown successfully
+2025-10-13 20:55:10,664 - INFO - Selected location 'In the office' using selector: //div[@data-id='0'][contains(text(), 'In the office')]
+2025-10-13 20:55:26,613 - INFO - Location selection successful
+2025-10-13 20:55:33,003 - INFO - Successfully clicked start button using selector: //button[@data-id='1' and contains(@class, 'start-work-button')]
+2025-10-13 20:55:33,003 - INFO - Start work button clicked successfully
+2025-10-13 20:55:38,147 - INFO - Scheduler initialized. Running...
+2025-10-13 20:56:24,823 - INFO - Shutting down...
+2025-10-13 20:56:24,824 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x77350b9987a0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/41ac6371cddc9ef3673f9d214b3207da
+2025-10-13 20:56:24,825 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x77350b998aa0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/41ac6371cddc9ef3673f9d214b3207da
+2025-10-13 20:56:24,825 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x77350b998c20>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/41ac6371cddc9ef3673f9d214b3207da
+2025-10-13 21:06:53,117 - INFO - Starting Work Portal Automation System
+2025-10-13 21:06:53,117 - INFO - Weekly schedule generated: {3: 'home', 2: 'home', 4: 'home', 0: 'home', 6: 'home', 1: 'home', 5: 'home'}
+2025-10-13 21:06:53,118 - INFO - Today's schedule - Morning: 07:31:16, Evening: 15:57:07
+2025-10-13 21:06:53,118 - INFO - Starting morning routine
+2025-10-13 21:06:53,118 - INFO - ====== WebDriver manager ======
+2025-10-13 21:06:53,180 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-13 21:06:53,320 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-13 21:06:53,451 - INFO - Driver [/home/alper/.wdm/drivers/chromedriver/linux64/141.0.7390.76/chromedriver-linux64/chromedriver] found in cache
+2025-10-13 21:06:54,012 - INFO - Driver setup complete
+2025-10-13 21:06:55,090 - INFO - Username entered
+2025-10-13 21:06:55,170 - INFO - Password entered
+2025-10-13 21:06:55,239 - INFO - Login button clicked
+2025-10-13 21:06:57,180 - INFO - Current URL after login: https://panel.rcponline.pl/app/
+2025-10-13 21:06:57,180 - INFO - Login successful - redirected to dashboard
+2025-10-13 21:06:57,180 - INFO - Login successful, waiting for page load
+2025-10-13 21:07:00,181 - INFO - Attempting to select location: home
+2025-10-13 21:07:00,198 - INFO - Found dropdown using exact XPath
+2025-10-13 21:07:01,413 - INFO - Clicked dropdown successfully
+2025-10-13 21:07:03,602 - INFO - Selected location 'Home office' using selector: //div[@data-id='1'][contains(text(), 'Home office')]
+2025-10-13 21:07:19,559 - INFO - Location selection successful
+2025-10-13 21:07:25,758 - INFO - Successfully clicked start button using selector: //button[@data-id='1' and contains(@class, 'start-work-button')]
+2025-10-13 21:07:25,758 - INFO - Start work button clicked successfully
+2025-10-13 21:07:30,929 - INFO - Scheduler initialized. Running...
+2025-10-13 21:07:39,736 - INFO - Shutting down...
+2025-10-13 21:07:39,737 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x728f9b2dc860>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/e08f20eaef2c0a1eca6876662fc3aceb
+2025-10-13 21:07:39,738 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x728f9b2dc980>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/e08f20eaef2c0a1eca6876662fc3aceb
+2025-10-13 21:07:39,738 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x728f9b2dcb00>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/e08f20eaef2c0a1eca6876662fc3aceb
+2025-10-13 21:14:18,450 - INFO - Starting Work Portal Automation System
+2025-10-13 21:14:18,450 - INFO - Weekly schedule generated: {1: 'home', 3: 'home', 6: 'home', 2: 'home', 4: 'home', 0: 'home', 5: 'home'}
+2025-10-13 21:14:18,450 - INFO - Today's schedule - Morning: 07:42:24, Evening: 16:09:08
+2025-10-13 21:14:18,451 - INFO - Starting morning routine
+2025-10-13 21:14:18,451 - INFO - ====== WebDriver manager ======
+2025-10-13 21:14:18,512 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-13 21:14:18,638 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-13 21:14:18,766 - INFO - Driver [/home/alper/.wdm/drivers/chromedriver/linux64/141.0.7390.76/chromedriver-linux64/chromedriver] found in cache
+2025-10-13 21:14:19,316 - INFO - Driver setup complete
+2025-10-13 21:14:20,397 - INFO - Username entered
+2025-10-13 21:14:20,482 - INFO - Password entered
+2025-10-13 21:14:20,553 - INFO - Login button clicked
+2025-10-13 21:14:22,590 - INFO - Current URL after login: https://panel.rcponline.pl/app/
+2025-10-13 21:14:22,590 - INFO - Login successful - redirected to dashboard
+2025-10-13 21:14:22,590 - INFO - Login successful, waiting for page load
+2025-10-13 21:14:25,590 - INFO - Attempting to select location: home
+2025-10-13 21:14:25,667 - INFO - Found dropdown using exact XPath
+2025-10-13 21:14:26,783 - INFO - Clicked dropdown successfully
+2025-10-13 21:14:29,095 - INFO - Selected location 'Home office' using selector: //div[@data-id='1'][contains(text(), 'Home office')]
+2025-10-13 21:14:45,074 - INFO - Location selection successful
+2025-10-13 21:14:50,379 - INFO - Successfully clicked start button using selector: //button[@data-id='1' and contains(@class, 'start-work-button')]
+2025-10-13 21:14:50,379 - INFO - Start work button clicked successfully
+2025-10-13 21:14:55,560 - INFO - Scheduler initialized. Running...
+2025-10-13 21:14:58,772 - INFO - Shutting down...
+2025-10-13 21:14:58,774 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x719c792cc530>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/9084d69a5e7dd421e4f136dc077b135d
+2025-10-13 21:14:58,774 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x719c792cc560>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/9084d69a5e7dd421e4f136dc077b135d
+2025-10-13 21:14:58,775 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x719c792cc740>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/9084d69a5e7dd421e4f136dc077b135d
+2025-10-13 21:15:27,395 - INFO - Starting Work Portal Automation System
+2025-10-13 21:15:27,395 - INFO - Weekly schedule generated: {3: 'home', 2: 'home', 4: 'home', 0: 'home', 5: 'home', 1: 'home', 6: 'home'}
+2025-10-13 21:15:27,395 - INFO - Today's schedule - Morning: 07:35:07, Evening: 15:53:14
+2025-10-13 21:15:27,396 - INFO - Starting morning routine
+2025-10-13 21:15:27,396 - INFO - ====== WebDriver manager ======
+2025-10-13 21:15:27,457 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-13 21:15:27,580 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-13 21:15:27,712 - INFO - Driver [/home/alper/.wdm/drivers/chromedriver/linux64/141.0.7390.76/chromedriver-linux64/chromedriver] found in cache
+2025-10-13 21:15:28,330 - INFO - Driver setup complete
+2025-10-13 21:15:29,258 - INFO - Username entered
+2025-10-13 21:15:29,357 - INFO - Password entered
+2025-10-13 21:15:29,442 - INFO - Login button clicked
+2025-10-13 21:15:31,432 - INFO - Current URL after login: https://panel.rcponline.pl/app/
+2025-10-13 21:15:31,432 - INFO - Login successful - redirected to dashboard
+2025-10-13 21:15:31,432 - INFO - Login successful, waiting for page load
+2025-10-13 21:15:34,432 - INFO - Attempting to select location: home
+2025-10-13 21:15:34,447 - INFO - Found dropdown using exact XPath
+2025-10-13 21:15:35,672 - INFO - Clicked dropdown successfully
+2025-10-13 21:15:37,860 - INFO - Selected location 'Home office' using selector: //div[@data-id='1'][contains(text(), 'Home office')]
+2025-10-13 21:15:53,767 - INFO - Location selection successful
+2025-10-13 21:15:58,039 - INFO - Successfully clicked start button using selector: //button[@data-id='1' and contains(@class, 'start-work-button')]
+2025-10-13 21:15:58,039 - INFO - Start work button clicked successfully
+2025-10-13 21:16:03,178 - INFO - Scheduler initialized. Running...
+2025-10-13 21:16:56,843 - INFO - Shutting down...
+2025-10-13 21:16:56,844 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fcff89402c0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/bfbb7b10668893e04e3120fae0bfc320
+2025-10-13 21:16:56,845 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fcff8940530>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/bfbb7b10668893e04e3120fae0bfc320
+2025-10-13 21:16:56,846 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fcff89406b0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/bfbb7b10668893e04e3120fae0bfc320
+2025-10-13 21:16:57,154 - INFO - Starting Work Portal Automation System
+2025-10-13 21:16:57,154 - INFO - Weekly schedule generated: {6: 'home', 4: 'home', 5: 'home', 3: 'home', 2: 'home', 1: 'home', 0: 'home'}
+2025-10-13 21:16:57,155 - INFO - Today's schedule - Morning: 08:16:57, Evening: 16:13:35
+2025-10-13 21:16:57,155 - INFO - Starting morning routine
+2025-10-13 21:16:57,155 - INFO - ====== WebDriver manager ======
+2025-10-13 21:16:57,219 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-13 21:16:57,337 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-13 21:16:57,514 - INFO - Driver [/home/alper/.wdm/drivers/chromedriver/linux64/141.0.7390.76/chromedriver-linux64/chromedriver] found in cache
+2025-10-13 21:16:58,768 - INFO - Driver setup complete
+2025-10-13 21:17:00,838 - INFO - Username entered
+2025-10-13 21:17:00,928 - INFO - Password entered
+2025-10-13 21:17:01,001 - INFO - Login button clicked
+2025-10-13 21:17:03,164 - INFO - Current URL after login: https://panel.rcponline.pl/app/
+2025-10-13 21:17:03,164 - INFO - Login successful - redirected to dashboard
+2025-10-13 21:17:03,164 - INFO - Login successful, waiting for page load
+2025-10-13 21:17:06,164 - INFO - Attempting to select location: home
+2025-10-13 21:17:06,195 - INFO - Found dropdown using exact XPath
+2025-10-13 21:17:06,337 - INFO - Clicked dropdown successfully
+2025-10-13 21:17:08,552 - INFO - Selected location 'Home office' using selector: //div[@data-id='1'][contains(text(), 'Home office')]
+2025-10-13 21:17:24,439 - INFO - Location selection successful
+2025-10-13 21:17:28,516 - INFO - Successfully clicked start button using selector: //button[@data-id='1' and contains(@class, 'start-work-button')]
+2025-10-13 21:17:28,516 - INFO - Start work button clicked successfully
+2025-10-13 21:17:33,633 - INFO - Scheduler initialized. Running...
+2025-10-13 21:17:47,220 - INFO - Shutting down...
+2025-10-13 21:17:47,222 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f0e7303c200>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/c3480268a203a7ea6cb907ef461e2f92
+2025-10-13 21:17:47,223 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f0e7303c410>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/c3480268a203a7ea6cb907ef461e2f92
+2025-10-13 21:17:47,225 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f0e7303c590>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/c3480268a203a7ea6cb907ef461e2f92
+2025-10-13 21:19:14,593 - INFO - Starting Work Portal Automation System
+2025-10-13 21:19:14,593 - INFO - Weekly schedule generated: {6: 'home', 2: 'home', 0: 'home', 4: 'home', 3: 'home', 5: 'home', 1: 'home'}
+2025-10-13 21:19:14,593 - INFO - Today's schedule - Morning: 08:02:35, Evening: 15:31:43
+2025-10-13 21:19:14,594 - INFO - Starting morning routine
+2025-10-13 21:19:14,594 - INFO - ====== WebDriver manager ======
+2025-10-13 21:19:14,668 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-13 21:19:14,824 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-13 21:19:15,013 - INFO - Driver [/home/alper/.wdm/drivers/chromedriver/linux64/141.0.7390.76/chromedriver-linux64/chromedriver] found in cache
+2025-10-13 21:19:15,887 - INFO - Driver setup complete
+2025-10-13 21:19:16,931 - INFO - Username entered
+2025-10-13 21:19:17,015 - INFO - Password entered
+2025-10-13 21:19:19,046 - INFO - Login button clicked
+2025-10-13 21:19:19,147 - INFO - Current URL after login: https://panel.rcponline.pl/app/
+2025-10-13 21:19:19,147 - INFO - Login successful - redirected to dashboard
+2025-10-13 21:19:19,148 - INFO - Login successful, waiting for page load
+2025-10-13 21:19:22,148 - INFO - Attempting to select location: home
+2025-10-13 21:19:22,223 - INFO - Found dropdown using exact XPath
+2025-10-13 21:19:22,412 - INFO - Clicked dropdown successfully
+2025-10-13 21:19:24,605 - INFO - Selected location 'Home office' using selector: //div[@data-id='1'][contains(text(), 'Home office')]
+2025-10-13 21:19:34,692 - INFO - Location selection successful
+2025-10-13 21:19:38,961 - INFO - Successfully clicked start button using selector: //button[@data-id='1' and contains(@class, 'start-work-button')]
+2025-10-13 21:19:38,961 - INFO - Start work button clicked successfully
+2025-10-13 21:19:44,170 - INFO - Scheduler initialized. Running...
+2025-10-13 21:20:01,048 - INFO - Shutting down...
+2025-10-13 21:20:01,049 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7e0e40dd4320>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/97080cfee49033ad45af5d5beab261c7
+2025-10-13 21:20:01,049 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7e0e40dd44d0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/97080cfee49033ad45af5d5beab261c7
+2025-10-13 21:20:01,050 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7e0e40dd4650>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/97080cfee49033ad45af5d5beab261c7
+2025-10-13 21:27:52,720 - INFO - Starting Work Portal Automation System
+2025-10-13 21:27:52,720 - INFO - Weekly schedule generated: {4: 'home', 1: 'home', 0: 'home', 5: 'home', 6: 'home', 3: 'home', 2: 'home'}
+2025-10-13 21:27:52,720 - INFO - Today's schedule - Morning: 08:26:04, Evening: 16:24:50
+2025-10-13 21:27:52,720 - INFO - Starting morning routine
+2025-10-13 21:27:52,720 - INFO - ====== WebDriver manager ======
+2025-10-13 21:27:52,790 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-13 21:27:52,921 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-13 21:27:53,052 - INFO - Driver [/home/alper/.wdm/drivers/chromedriver/linux64/141.0.7390.76/chromedriver-linux64/chromedriver] found in cache
+2025-10-13 21:27:53,623 - INFO - Driver setup complete
+2025-10-13 21:27:54,933 - INFO - Username entered
+2025-10-13 21:27:55,023 - INFO - Password entered
+2025-10-13 21:27:55,097 - INFO - Login button clicked
+2025-10-13 21:27:57,019 - INFO - Current URL after login: https://panel.rcponline.pl/app/
+2025-10-13 21:27:57,019 - INFO - Login successful - redirected to dashboard
+2025-10-13 21:27:57,019 - INFO - Login successful, waiting for page load
+2025-10-13 21:28:00,019 - INFO - Attempting to select location: home
+2025-10-13 21:28:00,096 - INFO - Found dropdown using exact XPath
+2025-10-13 21:28:00,315 - INFO - Clicked dropdown successfully
+2025-10-13 21:28:00,419 - INFO - Selected location 'Home office' using selector: //div[@data-id='1'][contains(text(), 'Home office')]
+2025-10-13 21:28:00,419 - INFO - Location selection successful
+2025-10-13 21:28:04,503 - INFO - Successfully clicked start button using selector: //button[@data-id='1' and contains(@class, 'start-work-button')]
+2025-10-13 21:28:04,503 - INFO - Start work button clicked successfully
+2025-10-13 21:28:09,688 - INFO - Scheduler initialized. Running...
+2025-10-13 21:29:21,824 - INFO - Shutting down...
+2025-10-13 21:29:21,825 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f2e8cd7aa0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/9d648034e502e7ef179d006ad0f1e95d
+2025-10-13 21:29:21,826 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f2e8cd78f0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/9d648034e502e7ef179d006ad0f1e95d
+2025-10-13 21:29:21,826 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f2e8cd7c80>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/9d648034e502e7ef179d006ad0f1e95d
+2025-10-13 21:35:33,418 - INFO - Starting Work Portal Automation System
+2025-10-13 21:35:33,418 - INFO - Weekly schedule generated: {1: 'office', 4: 'office', 2: 'office', 3: 'home', 0: 'home'}
+2025-10-13 21:35:33,418 - INFO - Today's schedule - Morning: 07:54:46, Evening: 16:30:19
+2025-10-13 21:35:33,418 - INFO - Starting morning routine
+2025-10-13 21:35:33,418 - INFO - ====== WebDriver manager ======
+2025-10-13 21:35:33,487 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-13 21:35:33,621 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-13 21:35:33,773 - INFO - Driver [/home/alper/.wdm/drivers/chromedriver/linux64/141.0.7390.76/chromedriver-linux64/chromedriver] found in cache
+2025-10-13 21:35:34,384 - INFO - Driver setup complete
+2025-10-13 21:35:35,508 - INFO - Username entered
+2025-10-13 21:35:35,590 - INFO - Password entered
+2025-10-13 21:35:35,661 - INFO - Login button clicked
+2025-10-13 21:35:38,020 - INFO - Current URL after login: https://panel.rcponline.pl/app/
+2025-10-13 21:35:38,020 - INFO - Login successful - redirected to dashboard
+2025-10-13 21:35:38,020 - INFO - Login successful, waiting for page load
+2025-10-13 21:35:41,021 - INFO - Attempting to select location: home
+2025-10-13 21:35:41,035 - INFO - Found dropdown using exact XPath
+2025-10-13 21:35:41,100 - INFO - Clicked dropdown successfully
+2025-10-13 21:35:41,191 - INFO - Selected location 'Home office' using selector: //div[@data-id='1'][contains(text(), 'Home office')]
+2025-10-13 21:35:41,191 - INFO - Location selection successful
+2025-10-13 21:35:45,291 - INFO - Successfully clicked start button using selector: //button[@data-id='1' and contains(@class, 'start-work-button')]
+2025-10-13 21:35:45,291 - INFO - Start work button clicked successfully
+2025-10-13 21:35:50,525 - INFO - Starting evening routine
+2025-10-13 21:35:50,525 - INFO - ====== WebDriver manager ======
+2025-10-13 21:35:50,624 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-13 21:35:50,764 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-13 21:35:50,895 - INFO - Driver [/home/alper/.wdm/drivers/chromedriver/linux64/141.0.7390.76/chromedriver-linux64/chromedriver] found in cache
+2025-10-13 21:35:52,008 - INFO - Driver setup complete
+2025-10-13 21:35:53,233 - INFO - Username entered
+2025-10-13 21:35:53,320 - INFO - Password entered
+2025-10-13 21:35:53,388 - INFO - Login button clicked
+2025-10-13 21:35:55,273 - INFO - Current URL after login: https://panel.rcponline.pl/app/
+2025-10-13 21:35:55,273 - INFO - Login successful - redirected to dashboard
+2025-10-13 21:35:55,274 - INFO - Login successful, waiting for page load
+2025-10-13 21:36:00,408 - INFO - Successfully clicked stop button using selector: //button[@data-id='6' and contains(@class, 'end-work-button')]
+2025-10-13 21:36:00,408 - INFO - Stop work button clicked successfully
+2025-10-13 21:36:05,489 - INFO - Scheduler initialized. Running...
+2025-10-13 21:36:16,885 - INFO - Shutting down...
+2025-10-13 21:36:16,887 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x793b470c8fb0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/87f4e4fd4a28c111cb6a0c2f82a45e0f
+2025-10-13 21:36:16,888 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x793b470c8b30>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/87f4e4fd4a28c111cb6a0c2f82a45e0f
+2025-10-13 21:36:16,889 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x793b470c8bf0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/87f4e4fd4a28c111cb6a0c2f82a45e0f
