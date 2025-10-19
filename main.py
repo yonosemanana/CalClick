@@ -83,8 +83,8 @@ class WorkPortalAutomation:
     def setup_driver(self):
         """Initialize Chrome driver with options"""
         options = webdriver.ChromeOptions()
-        # Uncomment below to run headless
-        # options.add_argument('--headless')
+        options.add_argument("--headless=new")
+        options.add_argument("--remote-allow-origins=*")
         options.add_argument('--no-sandbox')
         options.add_argument('--disable-dev-shm-usage')
         options.add_argument('--disable-blink-features=AutomationControlled')
