@@ -4,6 +4,7 @@ version = "0.1.0"
 description = ""
 authors = ["yonosemanana <yonosemanana.ap@gmail.com>"]
 readme = "README.md"
+package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.12"
@@ -11,6 +12,7 @@ selenium = "^4.36.0"
 schedule = "^1.2.2"
 pytz = "^2025.2"
 dotenv = "^0.9.9"
+webdriver-manager = "^4.0.2"
 
 
 [build-system]
