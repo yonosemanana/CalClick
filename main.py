@@ -95,7 +95,16 @@ class WorkPortalAutomation:
         options.add_argument('--disable-popup-blocking')
         options.add_argument('--no-first-run')
 
-        service = Service(ChromeDriverManager().install())
+        # Get Chrome version from environment
+        chrome_version = os.getenv('CHROME_VERSION', '')
+
+        # Configure ChromeDriverManager to match Chrome version
+        if chrome_version:
+            driver_manager = ChromeDriverManager(version=f"{chrome_version}.0.0")
+        else:
+            driver_manager = ChromeDriverManager()
+
+        service = Service(driver_manager.install())
         self.driver = webdriver.Chrome(service=service, options=options)
         self.driver.maximize_window()
 
