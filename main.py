@@ -83,8 +83,6 @@ class WorkPortalAutomation:
     def setup_driver(self):
         """Initialize Chrome driver with options"""
         options = webdriver.ChromeOptions()
-        # Uncomment below to run headless
-        # options.add_argument('--headless')
         options.add_argument('--no-sandbox')
         options.add_argument('--disable-dev-shm-usage')
         options.add_argument('--disable-blink-features=AutomationControlled')
@@ -99,7 +97,6 @@ class WorkPortalAutomation:
 
         service = Service(ChromeDriverManager().install())
         self.driver = webdriver.Chrome(service=service, options=options)
-        self.driver.maximize_window()
 
         # Set default timeouts
         self.driver.set_page_load_timeout(30)
@@ -410,10 +407,6 @@ def schedule_tasks(automation):
     schedule.every().wednesday.at(evening_schedule_time).do(automation.evening_routine)
     schedule.every().thursday.at(evening_schedule_time).do(automation.evening_routine)
     schedule.every().friday.at(evening_schedule_time).do(automation.evening_routine)
-
-    # ### Tests
-    # automation.morning_routine()
-    # automation.evening_routine()
 
     # Regenerate weekly schedule every Monday at midnight
     schedule.every().monday.at("00:01").do(lambda: automation.generate_weekly_schedule())
