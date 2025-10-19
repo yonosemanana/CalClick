@@ -1,1 +1,8 @@
+.venv
+error_screenshot.png
+__pycache__/
+poetry.lock
+
 .env
+
+debug.log
