@@ -9,6 +9,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 import logging
+from logging.handlers import RotatingFileHandler
 import os
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
@@ -17,16 +18,32 @@ from webdriver_manager.chrome import ChromeDriverManager
 load_dotenv()
 
 # Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler('debug.log'),
-        logging.StreamHandler()
-    ]
-)
+LOG_FORMAT = '%(asctime)s - %(levelname)s - %(message)s'
+LOG_LEVEL = logging.DEBUG
+
+# Root logger
+logger = logging.getLogger()
+logger.setLevel(logging.DEBUG)
+
+# Console handler
+console_handler = logging.StreamHandler()
+console_handler.setLevel(logging.INFO)
+console_formatter = logging.Formatter(LOG_FORMAT)
+console_handler.setFormatter(console_formatter)
+
+# Rotating file handler (debug.log) - 1MB max, keep 5 backups
+log_file = 'debug.log'
+file_handler = RotatingFileHandler(log_file, maxBytes=1 * 1024 * 1024, backupCount=5)
+file_handler.setLevel(logging.DEBUG)
+file_handler.setFormatter(console_formatter)
+
+logger.addHandler(console_handler)
+logger.addHandler(file_handler)
+
 
 WORK_PORTAL_URL = "https://panel.rcponline.pl/login/"
+
+
 
 class WorkPortalAutomation:
     def __init__(self, portal_url, username, password):
@@ -60,7 +77,7 @@ class WorkPortalAutomation:
         for day in days[3:]:
             schedule[day] = "home"
 
-        logging.info(f"Weekly schedule generated: {schedule}")
+        logger.info(f"Weekly schedule generated: {schedule}")
         return schedule
 
     def setup_driver(self):
@@ -106,36 +123,36 @@ class WorkPortalAutomation:
             # Clear and enter username
             username_input.clear()
             username_input.send_keys(self.username)
-            logging.info("Username entered")
+            logger.info("Username entered")
 
             # Clear and enter password
             password_input.clear()
             password_input.send_keys(self.password)
-            logging.info("Password entered")
+            logger.info("Password entered")
 
             # Find and click login button
             login_button = self.driver.find_element(By.ID, "kt_login_signin_submit")
             login_button.click()
-            logging.info("Login button clicked")
+            logger.info("Login button clicked")
 
             # Wait for redirect
             wait.until(lambda driver: driver.current_url != self.portal_url)
             current_url = self.driver.current_url
-            logging.info(f"Current URL after login: {current_url}")
+            logger.info(f"Current URL after login: {current_url}")
 
             if "login" not in current_url.lower():
-                logging.info("Login successful - redirected to dashboard")
+                logger.info("Login successful - redirected to dashboard")
                 return True
             else:
-                logging.error("Still on login page after attempt")
+                logger.error("Still on login page after attempt")
                 return False
 
         except TimeoutException:
-            logging.error("Timeout waiting for redirect after login")
+            logger.error("Timeout waiting for redirect after login")
             return False
 
         except Exception as e:
-            logging.error(f"Login error: {str(e)}")
+            logger.error(f"Login error: {str(e)}")
             return False
 
     def click_start_work(self):
@@ -153,16 +170,16 @@ class WorkPortalAutomation:
                 # Try to find the button
                 start_button = wait.until(EC.presence_of_element_located((by, selector)))
                 start_button.click()
-                logging.info(f"Successfully clicked start button using selector: {selector}")
+                logger.info(f"Successfully clicked start button using selector: {selector}")
                 return True
 
             except (TimeoutException, NoSuchElementException):
                 # If we get here, no button was found
-                logging.error("Could not find or click start button with any selector")
+                logger.error("Could not find or click start button with any selector")
                 return False
 
         except Exception as e:
-            logging.error(f"Error clicking start work: {str(e)}")
+            logger.error(f"Error clicking start work: {str(e)}")
             return False
 
     def click_stop_work(self):
@@ -180,16 +197,16 @@ class WorkPortalAutomation:
                 # Try to find the button
                 stop_button = wait.until(EC.presence_of_element_located((by, selector)))
                 stop_button.click()
-                logging.info(f"Successfully clicked stop button using selector: {selector}")
+                logger.info(f"Successfully clicked stop button using selector: {selector}")
                 return True
 
             except (TimeoutException, NoSuchElementException):
                 # If we get here, no button was found
-                logging.error("Could not find or click stop button with any selector")
+                logger.error("Could not find or click stop button with any selector")
                 return False
 
         except Exception as e:
-            logging.error(f"Error clicking stop work: {str(e)}")
+            logger.error(f"Error clicking stop work: {str(e)}")
             return False
 
     def select_location(self, location):
@@ -206,12 +223,12 @@ class WorkPortalAutomation:
                 remote_select = wait.until(
                     EC.presence_of_element_located((By.XPATH, '//*[@id="remote_holder"]/span/span[1]/span'))
                 )
-                logging.info("Found dropdown using exact XPath")
+                logger.info("Found dropdown using exact XPath")
                 remote_select.click()
-                logging.info("Clicked dropdown successfully")
+                logger.info("Clicked dropdown successfully")
 
             except (TimeoutException, NoSuchElementException):
-                logging.error("Could not find location dropdown or click it")
+                logger.error("Could not find location dropdown or click it")
                 return False
 
             # Select the appropriate option
@@ -228,15 +245,15 @@ class WorkPortalAutomation:
             try:
                 option = wait.until(EC.element_to_be_clickable((by, selector)))
                 option.click()
-                logging.info(f"Selected location '{option_text}' using selector: {selector}")
+                logger.info(f"Selected location '{option_text}' using selector: {selector}")
                 return True
 
             except (TimeoutException, NoSuchElementException) as e:
-                logging.error(f"Failed with selector {selector}: {str(e)}")
+                logger.error(f"Failed with selector {selector}: {str(e)}")
                 return False
 
         except Exception as e:
-            logging.error(f"Error in select_location: {str(e)}")
+            logger.error(f"Error in select_location: {str(e)}")
             return False
 
     def morning_routine(self):
@@ -245,48 +262,48 @@ class WorkPortalAutomation:
 
         # Check if it's a business day
         if today > 4:
-            logging.info("Weekend - skipping morning routine")
+            logger.info("Weekend - skipping morning routine")
             return
 
-        logging.info("Starting morning routine")
+        logger.info("Starting morning routine")
 
         try:
             self.setup_driver()
-            logging.info("Driver setup complete")
+            logger.info("Driver setup complete")
 
             if not self.login():
                 raise Exception("Login failed")
-            logging.info("Login successful, waiting for page load")
+            logger.info("Login successful, waiting for page load")
 
             time.sleep(3)  # Wait for page to fully load after login
 
             location = self.weekly_schedule[today]
-            logging.info(f"Attempting to select location: {location}")
+            logger.info(f"Attempting to select location: {location}")
 
             if not self.select_location(location):
                 raise Exception("Failed to select location")
-            logging.info("Location selection successful")
+            logger.info("Location selection successful")
 
             time.sleep(2)  # Brief pause before clicking start
 
             if not self.click_start_work():
                 raise Exception("Failed to click start work button")
-            logging.info("Start work button clicked successfully")
+            logger.info("Start work button clicked successfully")
 
             # Keep browser open for a bit, then close
             time.sleep(5)
 
         except Exception as e:
-            logging.error(f"Morning routine error: {str(e)}")
+            logger.error(f"Morning routine error: {str(e)}")
             # Log the current URL to help with debugging
             if self.driver:
-                logging.error(f"Current URL when error occurred: {self.driver.current_url}")
+                logger.error(f"Current URL when error occurred: {self.driver.current_url}")
                 # Take screenshot on error
                 try:
                     self.driver.save_screenshot("error_screenshot.png")
-                    logging.info("Error screenshot saved as error_screenshot.png")
+                    logger.info("Error screenshot saved as error_screenshot.png")
                 except Exception as ss_err:
-                    logging.error(f"Failed to save screenshot: {str(ss_err)}")
+                    logger.error(f"Failed to save screenshot: {str(ss_err)}")
         finally:
             if self.driver:
                 self.driver.quit()
@@ -297,39 +314,39 @@ class WorkPortalAutomation:
 
         # Check if it's a business day
         if today > 4:
-            logging.info("Weekend - skipping evening routine")
+            logger.info("Weekend - skipping evening routine")
             return
 
-        logging.info("Starting evening routine")
+        logger.info("Starting evening routine")
 
         try:
             self.setup_driver()
-            logging.info("Driver setup complete")
+            logger.info("Driver setup complete")
 
             if not self.login():
                 raise Exception("Login failed")
-            logging.info("Login successful, waiting for page load")
+            logger.info("Login successful, waiting for page load")
 
             time.sleep(3)  # Wait for page to fully load after login
 
             if not self.click_stop_work():
                 raise Exception("Failed to click stop work button")
-            logging.info("Stop work button clicked successfully")
+            logger.info("Stop work button clicked successfully")
 
             # Keep browser open for a bit, then close
             time.sleep(5)
 
         except Exception as e:
-            logging.error(f"Evening routine error: {str(e)}")
+            logger.error(f"Evening routine error: {str(e)}")
             # Log the current URL to help with debugging
             if self.driver:
-                logging.error(f"Current URL when error occurred: {self.driver.current_url}")
+                logger.error(f"Current URL when error occurred: {self.driver.current_url}")
                 # Take screenshot on error
                 try:
                     self.driver.save_screenshot("error_screenshot.png")
-                    logging.info("Error screenshot saved as error_screenshot.png")
+                    logger.info("Error screenshot saved as error_screenshot.png")
                 except Exception as ss_err:
-                    logging.error(f"Failed to save screenshot: {str(ss_err)}")
+                    logger.error(f"Failed to save screenshot: {str(ss_err)}")
         finally:
             if self.driver:
                 self.driver.quit()
@@ -374,7 +391,7 @@ def schedule_tasks(automation):
     morning_time = calculate_random_time(8, 0, 30)
     evening_time = calculate_random_time(16, 0, 30)
 
-    logging.info(f"Today's schedule - Morning: {morning_time}, Evening: {evening_time}")
+    logger.info(f"Today's schedule - Morning: {morning_time}, Evening: {evening_time}")
 
     # Schedule tasks (using only HH:MM part for schedule library compatibility)
     morning_schedule_time = morning_time[:5]  # Get only HH:MM part
@@ -411,7 +428,7 @@ def main():
     username = os.getenv("CALCLICK_USER")
     password = os.getenv("CALCLICK_PASS")
 
-    logging.info("Starting Work Portal Automation System")
+    logger.info("Starting Work Portal Automation System")
 
     # Initialize automation
     automation = WorkPortalAutomation(WORK_PORTAL_URL, username, password)
@@ -419,7 +436,7 @@ def main():
     # Schedule tasks
     schedule_tasks(automation)
 
-    logging.info("Scheduler initialized. Running...")
+    logger.info("Scheduler initialized. Running...")
 
     # Run scheduler loop
     try:
@@ -427,7 +444,7 @@ def main():
             schedule.run_pending()
             time.sleep(60)  # Check every minute
     except KeyboardInterrupt:
-        logging.info("Shutting down...")
+        logger.info("Shutting down...")
         automation.cleanup()
 
 
