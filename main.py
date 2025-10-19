@@ -97,7 +97,7 @@ class WorkPortalAutomation:
 
         service = Service(ChromeDriverManager().install())
         self.driver = webdriver.Chrome(service=service, options=options)
-        # self.driver.maximize_window()
+        # self.driver.maximize_window() ### Seems there is a bug, e.g: https://issuetracker.google.com/issues/394760806?pli=1
 
         # Set default timeouts
         self.driver.set_page_load_timeout(30)
