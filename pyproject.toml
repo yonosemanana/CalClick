@@ -1,20 +1,16 @@
 [tool.poetry]
-name = "calendarclick"
+name = "calclick"
 version = "0.1.0"
-description = ""
-authors = ["yonosemanana <yonosemanana.ap@gmail.com>"]
-readme = "README.md"
-package-mode = false
+description = "Work Portal Automation"
+authors = ["yonosemanana"]
 
 [tool.poetry.dependencies]
-python = "^3.12"
-selenium = "^4.36.0"
-schedule = "^1.2.2"
-pytz = "^2025.2"
-dotenv = "^0.9.9"
-webdriver-manager = "^4.0.2"
-
+python = "^3.12"  # Specifically target Python 3.12
+selenium = "^4.17.2"
+webdriver-manager = "^4.0.1"
+python-dotenv = "^1.0.1"
+schedule = "^1.2.1"
 
 [build-system]
-requires = ["poetry-core"]
+requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
