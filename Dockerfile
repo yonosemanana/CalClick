@@ -8,18 +8,14 @@ RUN apt-get update && apt-get install -y wget gnupg2 xvfb \
     && apt-get update && apt-get install -y google-chrome-stable \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Poetry
-RUN pip install poetry
-
 # Set working directory
 WORKDIR /app
 
-# Copy Poetry files
-COPY pyproject.toml poetry.lock* ./
+# Copy requirements first to leverage Docker cache
+COPY requirements.txt .
 
-# Install dependencies
-RUN poetry config virtualenvs.create false \
-    && poetry install --no-interaction --no-ansi
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application code
 COPY . .
@@ -33,4 +29,4 @@ RUN useradd -m appuser && chown -R appuser:appuser /app
 USER appuser
 
 # Start Xvfb and run the application
-CMD Xvfb :99 -screen 0 1024x768x16 & poetry run python main.py
+CMD Xvfb :99 -screen 0 1024x768x16 & python main.py
