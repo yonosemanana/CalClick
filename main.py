@@ -66,7 +66,7 @@ class WorkPortalAutomation:
         Generate random weekly schedule: 3 days office, 2 days home
         Returns dict with day numbers (0=Monday) and location
         """
-        days = [0, 1, 2, 3, 4]  # Monday to Friday
+        days = [0, 1, 2, 3, 4, 5, 6]  # Monday to Friday
         random.shuffle(days)
 
         schedule = {}
@@ -261,9 +261,9 @@ class WorkPortalAutomation:
         today = datetime.now().weekday()
 
         # Check if it's a business day
-        if today > 4:
-            logger.info("Weekend - skipping morning routine")
-            return
+        # if today > 4:
+        #     logger.info("Weekend - skipping morning routine")
+        #     return
 
         logger.info("Starting morning routine")
 
@@ -313,9 +313,9 @@ class WorkPortalAutomation:
         today = datetime.now().weekday()
 
         # Check if it's a business day
-        if today > 4:
-            logger.info("Weekend - skipping evening routine")
-            return
+        # if today > 4:
+        #     logger.info("Weekend - skipping evening routine")
+        #     return
 
         logger.info("Starting evening routine")
 
@@ -412,8 +412,8 @@ def schedule_tasks(automation):
     schedule.every().friday.at(evening_schedule_time).do(automation.evening_routine)
 
     # ### Tests
-    # automation.morning_routine()
-    # automation.evening_routine()
+    automation.morning_routine()
+    automation.evening_routine()
 
     # Regenerate weekly schedule every Monday at midnight
     schedule.every().monday.at("00:01").do(lambda: automation.generate_weekly_schedule())
