@@ -1,4 +1,6 @@
 .venv
+error_screenshot.png
+__pycache__/
 
 .env
 
