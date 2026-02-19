@@ -385,8 +385,8 @@ def schedule_tasks(automation):
     schedule.clear()
 
     # Generate random times for today
-    morning_time = calculate_random_time(8, 0, 30)
-    evening_time = calculate_random_time(16, 0, 30)
+    morning_time = calculate_random_time(9, 0, 30)
+    evening_time = calculate_random_time(17, 0, 30)
 
     logger.info(f"Today's schedule - Morning: {morning_time}, Evening: {evening_time}")
 
